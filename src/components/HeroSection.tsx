@@ -19,31 +19,35 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video background */}
+      {/* Soft gradient background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23080810'/%3E%3C/svg%3E"
-        >
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-dark-blue-futuristic-technology-background-9783-large.mp4"
-            type="video/mp4"
-          />
-        </video>
-        {/* Video overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-background" />
+        {/* Subtle animated orbs */}
+        <motion.div
+          className="absolute top-1/4 right-1/3 w-[500px] h-[500px] rounded-full opacity-30 blur-[120px]"
+          style={{ background: "hsl(262, 83%, 70%)" }}
+          animate={{ 
+            scale: [1, 1.2, 1],
+            x: [0, 30, 0],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full opacity-25 blur-[100px]"
+          style={{ background: "hsl(280, 70%, 75%)" }}
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
       </div>
 
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
       
-      {/* Floating HUD elements */}
+      {/* Floating decorative elements - softer */}
       <motion.div
-        className="absolute top-20 left-10 w-32 h-32 border border-primary/20 rounded-lg opacity-30"
+        className="absolute top-20 left-10 w-32 h-32 border border-primary/15 rounded-2xl opacity-40"
         style={{
           transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`,
         }}
@@ -51,7 +55,7 @@ const HeroSection = () => {
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute bottom-32 right-20 w-24 h-24 border border-primary/10 rounded-full opacity-20"
+        className="absolute bottom-32 right-20 w-24 h-24 border border-primary/10 rounded-full opacity-30"
         style={{
           transform: `translate(${-mousePosition.x * 0.3}px, ${-mousePosition.y * 0.3}px)`,
         }}
@@ -59,30 +63,9 @@ const HeroSection = () => {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       
-      {/* Floating orbs */}
-      <motion.div
-        className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-20 blur-[100px]"
-        style={{ background: "hsl(262.1, 83.3%, 57.8%)" }}
-        animate={{ 
-          scale: [1, 1.2, 1],
-          x: [0, 30, 0],
-          y: [0, -20, 0],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 left-1/4 w-48 h-48 rounded-full opacity-15 blur-[80px]"
-        style={{ background: "hsl(320, 70%, 60%)" }}
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          x: [0, -20, 0],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-      
-      {/* Accent lines */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <div className="absolute bottom-1/3 right-0 w-1/4 h-px bg-gradient-to-l from-transparent via-primary/20 to-transparent" />
+      {/* Accent lines - refined */}
+      <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute bottom-1/3 right-0 w-1/4 h-px bg-gradient-to-l from-transparent via-primary/15 to-transparent" />
       
       {/* Main content */}
       <div className="relative z-10 text-center px-6">
@@ -94,9 +77,9 @@ const HeroSection = () => {
             transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`,
           }}
         >
-          {/* Purple glow behind name */}
+          {/* Soft glow behind name */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-96 h-32 bg-primary/20 blur-[100px] rounded-full" />
+            <div className="w-96 h-32 bg-primary/15 blur-[100px] rounded-full" />
           </div>
           
           <motion.p
@@ -130,7 +113,7 @@ const HeroSection = () => {
           </motion.div>
           
           <motion.p
-            className="font-heading text-lg md:text-xl text-muted-foreground max-w-xl mx-auto italic"
+            className="font-accent text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}

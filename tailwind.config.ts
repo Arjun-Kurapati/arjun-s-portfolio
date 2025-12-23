@@ -62,9 +62,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Orbitron", "sans-serif"],
-        heading: ["Rajdhani", "sans-serif"],
-        body: ["Space Grotesk", "sans-serif"],
+        display: ["Sora", "sans-serif"],
+        heading: ["Sora", "sans-serif"],
+        body: ["DM Sans", "sans-serif"],
+        accent: ["Instrument Serif", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

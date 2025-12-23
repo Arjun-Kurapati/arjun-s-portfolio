@@ -97,12 +97,10 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h1 className="font-display text-3xl font-bold tracking-widest">
-                <span className="text-foreground">K</span>
-                <span className="text-gradient">.</span>
-                <span className="text-foreground">ARJUN</span>
+                <span className="text-foreground">KURAPATI ARJUN</span>
               </h1>
               <p className="font-heading text-sm text-muted-foreground mt-2 tracking-[0.3em]">
-                LEVEL DESIGNER
+                GAME DESIGNER & LEVEL DESIGNER
               </p>
             </motion.div>
 

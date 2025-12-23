@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import EasterEgg from "@/components/EasterEgg";
 import LoadingScreen from "@/components/LoadingScreen";
 import ThemeToggle from "@/components/ThemeToggle";
+import ResumeToggle from "@/components/ResumeToggle";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -76,6 +77,9 @@ const Index = () => {
         
         {/* Easter egg listener */}
         <EasterEgg />
+        
+        {/* Resume toggle */}
+        <ResumeToggle />
         
         {/* Theme toggle */}
         <ThemeToggle />

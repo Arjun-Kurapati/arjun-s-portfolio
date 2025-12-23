@@ -56,9 +56,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             exit={{ opacity: 0 }}
           />
 
-          {/* Modal content */}
+          {/* Modal content - Fullscreen */}
           <motion.div
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-card to-background-secondary rounded-2xl border border-border/50"
+            className="relative w-full h-full max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] overflow-y-auto bg-gradient-to-br from-card to-background-secondary rounded-2xl border border-border/50"
             initial={{ scale: 0.9, opacity: 0, y: 50 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 50 }}

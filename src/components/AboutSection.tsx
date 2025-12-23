@@ -28,7 +28,7 @@ const AboutSection = () => {
               Philosophy
             </span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-gradient">
             Design Approach
           </h2>
         </motion.div>
@@ -55,8 +55,8 @@ const AboutSection = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               >
-                <div className="w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary group-hover:shadow-[0_0_10px_hsla(187,100%,50%,0.5)] transition-all duration-300" />
-                <p className="font-body text-secondary-foreground group-hover:text-foreground transition-colors duration-300">
+                <div className="w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary group-hover:shadow-[0_0_10px_hsla(262,83%,58%,0.5)] transition-all duration-300" />
+                <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                   {point}
                 </p>
               </motion.div>

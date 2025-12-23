@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -6,9 +7,13 @@ import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import EasterEgg from "@/components/EasterEgg";
+import LoadingScreen from "@/components/LoadingScreen";
 import { Helmet } from "react-helmet-async";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
       <Helmet>
@@ -23,7 +28,18 @@ const Index = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <div className="relative min-h-screen bg-background overflow-x-hidden">
+      {/* Loading screen */}
+      <AnimatePresence>
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
+      {/* Main content */}
+      <motion.div 
+        className="relative min-h-screen bg-background overflow-x-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         {/* Atmospheric overlays */}
         <div className="noise-overlay" />
         <div className="vignette" />
@@ -59,7 +75,7 @@ const Index = () => {
         
         {/* Easter egg listener */}
         <EasterEgg />
-      </div>
+      </motion.div>
     </>
   );
 };

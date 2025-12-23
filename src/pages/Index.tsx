@@ -52,22 +52,24 @@ const Index = () => {
         
         {/* Main content */}
         <main>
-          <HeroSection />
-          
-          <div id="about">
-            <AboutSection />
+          <div id="home">
+            <HeroSection />
           </div>
           
-          <div id="projects">
+          <div id="personal-projects">
             <ProjectsSection />
           </div>
           
-          <div id="skills">
+          <div id="professional-work">
+            <ExperienceSection />
+          </div>
+          
+          <div id="group-projects">
             <SkillsSection />
           </div>
           
-          <div id="experience">
-            <ExperienceSection />
+          <div id="about">
+            <AboutSection />
           </div>
           
           <div id="contact">

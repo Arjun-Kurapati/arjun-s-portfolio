@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
+import GroupProjectsSection from "@/components/GroupProjectsSection";
 import EasterEgg from "@/components/EasterEgg";
 import LoadingScreen from "@/components/LoadingScreen";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -65,6 +66,10 @@ const Index = () => {
           </div>
           
           <div id="group-projects">
+            <GroupProjectsSection />
+          </div>
+          
+          <div id="skills">
             <SkillsSection />
           </div>
           

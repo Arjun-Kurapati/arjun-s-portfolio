@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Personal Projects", href: "#personal-projects" },
   { label: "Professional Work", href: "#professional-work" },
   { label: "Group Projects", href: "#group-projects" },
+  { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "/FelipeFleming_CV.pdf", isExternal: true },
   { label: "Contact", href: "#contact" },

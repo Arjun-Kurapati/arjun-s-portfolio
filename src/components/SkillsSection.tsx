@@ -6,22 +6,22 @@ const skillCategories = [
   {
     title: "Level Design",
     icon: <Gamepad2 className="w-6 h-6 text-primary" />,
-    skills: ["Environmental Storytelling", "Player Flow", "Spatial Composition", "Lighting Design"],
+    skills: ["Environmental Storytelling", "Player Flow", "Spatial Composition", "Lighting Design", "Puzzle Design", "Combat Spaces", "Pacing & Rhythm", "Verticality", "Cover Systems", "Navigation Mesh", "Playtest Iteration", "Greyboxing"],
   },
   {
     title: "World Building",
     icon: <Globe className="w-6 h-6 text-primary" />,
-    skills: ["Lore Integration", "Atmospheric Design", "Landmark Creation", "Cultural Authenticity"],
+    skills: ["Lore Integration", "Atmospheric Design", "Landmark Creation", "Cultural Authenticity", "Biome Design", "Weather Systems", "Day/Night Cycles", "NPC Placement", "Audio Ambience", "Visual Hierarchy", "Open World Design"],
   },
   {
     title: "Game Engines",
     icon: <Cpu className="w-6 h-6 text-primary" />,
-    skills: ["Unreal Engine 5", "Unity", "CryEngine", "Godot"],
+    skills: ["Unreal Engine 5", "Unity", "CryEngine", "Godot", "Blueprints", "C# Scripting", "Nanite", "Lumen", "Terrain Tools", "Material Editor", "Sequencer"],
   },
   {
     title: "3D & Tools",
     icon: <Palette className="w-6 h-6 text-primary" />,
-    skills: ["Maya", "Blender", "Substance Painter", "World Machine"],
+    skills: ["Maya", "Blender", "Substance Painter", "World Machine", "ZBrush", "Photoshop", "Houdini", "Gaea", "Quixel Mixer", "SpeedTree", "Marmoset Toolbag"],
   },
 ];
 

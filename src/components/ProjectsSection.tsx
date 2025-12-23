@@ -99,8 +99,13 @@ const ProjectsSection = () => {
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-primary" />
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Personal Projects
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 relative">
+            <span className="relative z-10">Personal Projects</span>
+            {/* Light glow effect behind text */}
+            <span 
+              className="absolute inset-0 blur-2xl opacity-40 bg-gradient-to-r from-primary/50 via-purple-400/40 to-pink-400/30 -z-10"
+              aria-hidden="true"
+            />
           </h2>
           <p className="font-body text-muted-foreground max-w-lg mx-auto">
             Select a project to explore the design process and final implementation

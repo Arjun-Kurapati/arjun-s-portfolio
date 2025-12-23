@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { useEffect } from "react";
 
 interface Project {
-  id: number;
+  id: number | string;
   title: string;
   description: string;
   fullDescription: string;

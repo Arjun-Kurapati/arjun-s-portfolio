@@ -235,14 +235,46 @@ const SkillsSection = () => {
         </motion.div>
 
         {/* Skills grid - Individual glassmorphism cards */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+                delayChildren: 0.2,
+              }
+            }
+          }}
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
               className="group relative"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.03 }}
+              variants={{
+                hidden: { 
+                  opacity: 0, 
+                  scale: 0.6, 
+                  y: 40,
+                  rotateX: 45,
+                  filter: "blur(10px)"
+                },
+                visible: { 
+                  opacity: 1, 
+                  scale: 1, 
+                  y: 0,
+                  rotateX: 0,
+                  filter: "blur(0px)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 12,
+                    mass: 0.5,
+                  }
+                }
+              }}
               whileHover={{ scale: 1.15, y: -8, zIndex: 10 }}
               onHoverStart={() => setHoveredSkill(skill.name)}
               onHoverEnd={() => setHoveredSkill(null)}
@@ -314,7 +346,7 @@ const SkillsSection = () => {
               </motion.div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

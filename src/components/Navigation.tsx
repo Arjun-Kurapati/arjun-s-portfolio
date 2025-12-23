@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Personal Projects", href: "#personal-projects" },
+  { label: "Professional Work", href: "#professional-work" },
+  { label: "Group Projects", href: "#group-projects" },
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
+  { label: "Resume", href: "/FelipeFleming_CV.pdf", isExternal: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -25,11 +27,17 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const handleNavClick = (link: typeof navLinks[0]) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (link.isExternal) {
+      window.open(link.href, "_blank");
+    } else if (link.href === "#home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.querySelector(link.href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -68,11 +76,11 @@ const Navigation = () => {
             {navLinks.map((link, index) => (
               <motion.button
                 key={link.label}
-                onClick={() => scrollToSection(link.href)}
-                className="relative font-heading text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300 group"
+                onClick={() => handleNavClick(link)}
+                className="relative font-heading text-xs tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.05 }}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
@@ -105,13 +113,13 @@ const Navigation = () => {
           {navLinks.map((link, index) => (
             <motion.button
               key={link.label}
-              onClick={() => scrollToSection(link.href)}
+              onClick={() => handleNavClick(link)}
               className="font-display text-2xl text-foreground hover:text-primary transition-colors duration-300"
               variants={{
                 open: { 
                   opacity: 1, 
                   y: 0,
-                  transition: { delay: 0.1 + index * 0.1 }
+                  transition: { delay: 0.1 + index * 0.05 }
                 },
                 closed: { 
                   opacity: 0, 

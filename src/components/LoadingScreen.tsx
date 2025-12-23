@@ -153,22 +153,22 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
             {/* Decorative elements */}
             <div className="flex justify-center gap-2 mt-8">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <motion.div
-                  key={i}
-                  className="w-2 h-2 rounded-full"
-                  initial={{ opacity: 0.3, scale: 0.8 }}
-                  animate={{
-                    opacity: progress > i * 20 ? 1 : 0.3,
-                    scale: progress > i * 20 ? 1 : 0.8,
-                    backgroundColor:
-                      progress > i * 20
-                        ? "hsl(262.1, 83.3%, 57.8%)"
-                        : "hsl(240, 3.7%, 15.9%)",
-                  }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                />
-              ))}
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="w-2 h-2 rounded-full"
+                    initial={{ opacity: 0.3, scale: 0.8 }}
+                    animate={{
+                      opacity: progress > i * 20 ? 1 : 0.3,
+                      scale: progress > i * 20 ? 1 : 0.8,
+                      backgroundColor:
+                        progress > i * 20
+                          ? "hsl(262, 83%, 58%)"
+                          : "hsl(248, 30%, 85%)",
+                    }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                  />
+                ))}
             </div>
           </div>
 

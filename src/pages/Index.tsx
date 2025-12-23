@@ -19,13 +19,13 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Kurapati Arjun | Level Designer - Future Games</title>
+        <title>Kurapati Arjun | Game Designer & Level Designer - Future Games</title>
         <meta 
           name="description" 
-          content="Level Designer crafting immersive game worlds at Future Games. Specializing in environmental storytelling, player flow, and atmospheric design." 
+          content="Game Designer & Level Designer crafting immersive game worlds at Future Games. Specializing in environmental storytelling, player flow, and atmospheric design." 
         />
-        <meta name="keywords" content="Level Designer, Game Developer, Unreal Engine, Unity, Environmental Design, Future Games" />
-        <meta property="og:title" content="Kurapati Arjun | Level Designer" />
+        <meta name="keywords" content="Game Designer, Level Designer, Game Developer, Unreal Engine, Unity, Environmental Design, Future Games" />
+        <meta property="og:title" content="Kurapati Arjun | Game Designer & Level Designer" />
         <meta property="og:description" content="Designing immersive worlds players remember" />
         <meta property="og:type" content="website" />
       </Helmet>

@@ -88,7 +88,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Level Designer
+            Game Designer & Level Designer
           </motion.p>
           
           <motion.h1

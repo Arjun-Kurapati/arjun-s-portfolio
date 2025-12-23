@@ -52,7 +52,7 @@ const ExperienceSection = () => {
               Career
             </span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-gradient">
             Experience Timeline
           </h2>
         </motion.div>
@@ -78,8 +78,8 @@ const ExperienceSection = () => {
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.15 }}
               >
                 {/* Timeline node */}
-                <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_hsla(187,100%,50%,0.3)]">
-                  <div className="absolute inset-1 rounded-full bg-primary animate-pulse" />
+                <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_hsla(262,83%,58%,0.3)]">
+                  <div className="absolute inset-1 rounded-full bg-primary neon-pulse" />
                 </div>
 
                 {/* Content */}
@@ -87,10 +87,10 @@ const ExperienceSection = () => {
                   <span className="font-heading text-sm text-primary tracking-wider">
                     {exp.period}
                   </span>
-                  <h3 className="font-display text-xl font-semibold text-foreground mt-1 group-hover:text-glow transition-all duration-300">
+                  <h3 className="font-display text-xl font-semibold text-gradient mt-1 group-hover:text-glow transition-all duration-300">
                     {exp.title}
                   </h3>
-                  <p className="font-heading text-sm text-secondary-foreground mt-1">
+                  <p className="font-heading text-sm text-muted-foreground mt-1">
                     {exp.company} • {exp.location}
                   </p>
                   <p className="font-body text-muted-foreground mt-3 leading-relaxed">

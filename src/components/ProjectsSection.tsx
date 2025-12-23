@@ -12,7 +12,6 @@ interface Project {
   role: string;
   tools: string[];
   icon: React.ReactNode;
-  accentColor: string;
 }
 
 const projects: Project[] = [
@@ -23,8 +22,7 @@ const projects: Project[] = [
     fullDescription: "A meticulously crafted atmospheric horror experience set within the decaying corridors of a once-thriving orbital research station. Players navigate through environmental storytelling, discovering the fate of the crew through subtle visual cues and deliberate level pacing.",
     role: "Level Designer",
     tools: ["Unreal Engine 5", "Maya", "Substance"],
-    icon: <Gamepad2 className="w-8 h-8 text-cyan-400" />,
-    accentColor: "cyan",
+    icon: <Gamepad2 className="w-8 h-8 text-primary" />,
   },
   {
     id: 2,
@@ -33,8 +31,7 @@ const projects: Project[] = [
     fullDescription: "An expansive open-world environment featuring dynamic weather systems and time-of-day progression. The valley rewards exploration with hidden caves, ancient ruins, and emergent gameplay opportunities scattered throughout the landscape.",
     role: "Level Designer",
     tools: ["Unity", "World Machine", "Photoshop"],
-    icon: <Map className="w-8 h-8 text-fuchsia-400" />,
-    accentColor: "magenta",
+    icon: <Map className="w-8 h-8 text-primary" />,
   },
   {
     id: 3,
@@ -43,8 +40,7 @@ const projects: Project[] = [
     fullDescription: "A vertical slice demonstrating innovative mountain climbing mechanics with dynamic handholds, weather hazards, and breathtaking vistas. Each section of the climb presents unique challenges while maintaining fluid player progression.",
     role: "Level Designer",
     tools: ["Unreal Engine 5", "Houdini", "ZBrush"],
-    icon: <Mountain className="w-8 h-8 text-emerald-400" />,
-    accentColor: "green",
+    icon: <Mountain className="w-8 h-8 text-primary" />,
   },
   {
     id: 4,
@@ -53,8 +49,7 @@ const projects: Project[] = [
     fullDescription: "A sophisticated multiplayer hub environment designed for seamless player interaction and instance transitions. The space balances social gathering areas with clear navigation pathways to various game modes.",
     role: "Level Designer",
     tools: ["Unity", "Blender", "Figma"],
-    icon: <Compass className="w-8 h-8 text-orange-400" />,
-    accentColor: "orange",
+    icon: <Compass className="w-8 h-8 text-primary" />,
   },
   {
     id: 5,
@@ -63,8 +58,7 @@ const projects: Project[] = [
     fullDescription: "A sprawling underground subway network featuring multiple branching paths that reflect player choices. Environmental storytelling reveals the history of the collapsed civilization above through artifacts and architectural details.",
     role: "Level Designer",
     tools: ["Unreal Engine 5", "3ds Max", "Quixel"],
-    icon: <Building className="w-8 h-8 text-cyan-400" />,
-    accentColor: "cyan",
+    icon: <Building className="w-8 h-8 text-primary" />,
   },
   {
     id: 6,
@@ -73,8 +67,7 @@ const projects: Project[] = [
     fullDescription: "An innovative puzzle platformer where players shift between dimensional layers to solve intricate environmental puzzles. Each layer presents the same space differently, requiring creative thinking and precise timing.",
     role: "Level Designer",
     tools: ["Unity", "ProBuilder", "Substance"],
-    icon: <Layers className="w-8 h-8 text-fuchsia-400" />,
-    accentColor: "magenta",
+    icon: <Layers className="w-8 h-8 text-primary" />,
   },
 ];
 
@@ -124,7 +117,6 @@ const ProjectsSection = () => {
               role={project.role}
               tools={project.tools}
               icon={project.icon}
-              accentColor={project.accentColor}
               index={index}
               onClick={() => setSelectedProject(project)}
             />

@@ -19,8 +19,27 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23080810'/%3E%3C/svg%3E"
+        >
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-dark-blue-futuristic-technology-background-9783-large.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Video overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+      </div>
+
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-background-secondary via-background to-background" />
+      <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
       
       {/* Floating HUD elements */}
       <motion.div
@@ -40,6 +59,27 @@ const HeroSection = () => {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       
+      {/* Floating orbs */}
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-20 blur-[100px]"
+        style={{ background: "hsl(262.1, 83.3%, 57.8%)" }}
+        animate={{ 
+          scale: [1, 1.2, 1],
+          x: [0, 30, 0],
+          y: [0, -20, 0],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-48 h-48 rounded-full opacity-15 blur-[80px]"
+        style={{ background: "hsl(320, 70%, 60%)" }}
+        animate={{ 
+          scale: [1.2, 1, 1.2],
+          x: [0, -20, 0],
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      
       {/* Accent lines */}
       <div className="absolute top-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute bottom-1/3 right-0 w-1/4 h-px bg-gradient-to-l from-transparent via-primary/20 to-transparent" />
@@ -54,9 +94,9 @@ const HeroSection = () => {
             transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)`,
           }}
         >
-          {/* Cyan glow behind name */}
+          {/* Purple glow behind name */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-96 h-32 bg-primary/10 blur-[100px] rounded-full" />
+            <div className="w-96 h-32 bg-primary/20 blur-[100px] rounded-full" />
           </div>
           
           <motion.p
@@ -69,13 +109,13 @@ const HeroSection = () => {
           </motion.p>
           
           <motion.h1
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-wider mb-4"
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            KURAPATI
-            <span className="block text-glow text-primary">ARJUN</span>
+            <span className="text-foreground">KURAPATI</span>
+            <span className="block text-glow text-gradient">ARJUN</span>
           </motion.h1>
           
           <motion.div
@@ -85,12 +125,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <span>Future Games</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-primary neon-pulse" />
             <span>Warsaw, Poland</span>
           </motion.div>
           
           <motion.p
-            className="font-heading text-lg md:text-xl text-secondary-foreground max-w-xl mx-auto italic"
+            className="font-heading text-lg md:text-xl text-muted-foreground max-w-xl mx-auto italic"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}

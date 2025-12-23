@@ -42,7 +42,7 @@ const Navigation = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <motion.div
-          className="absolute inset-0 backdrop-blur-xl border-b border-border/30"
+          className="absolute inset-0 backdrop-blur-xl border-b border-primary/20"
           style={{ opacity: bgOpacity }}
         />
         
@@ -58,7 +58,7 @@ const Navigation = () => {
             }}
           >
             <span className="font-display text-lg font-bold text-foreground tracking-wider">
-              K<span className="text-primary">.</span>ARJUN
+              K<span className="text-gradient">.</span>ARJUN
             </span>
             <div className="absolute -inset-2 bg-primary/0 group-hover:bg-primary/5 rounded-lg transition-colors duration-300" />
           </motion.a>

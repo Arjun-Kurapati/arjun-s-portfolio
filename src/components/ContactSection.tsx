@@ -17,7 +17,7 @@ const ContactSection = () => {
     <section className="relative py-32 px-6" ref={ref}>
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[400px] bg-primary/5 blur-[150px] rounded-full" />
+        <div className="w-[600px] h-[400px] bg-primary/10 blur-[150px] rounded-full" />
       </div>
 
       <div className="max-w-3xl mx-auto relative text-center">
@@ -37,7 +37,7 @@ const ContactSection = () => {
 
           <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6">
             Let's Build Worlds
-            <span className="block text-primary text-glow">Together</span>
+            <span className="block text-gradient text-glow">Together</span>
           </h2>
 
           <motion.p
@@ -61,8 +61,8 @@ const ContactSection = () => {
               <motion.a
                 key={link.label}
                 href={link.href}
-                className="group relative p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="group relative p-4 rounded-xl bg-secondary/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 30px -10px hsla(262, 83%, 58%, 0.3)" }}
                 whileTap={{ scale: 0.98 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +83,7 @@ const ContactSection = () => {
 
         {/* Footer */}
         <motion.div
-          className="mt-24 pt-8 border-t border-border/30"
+          className="mt-24 pt-8 border-t border-primary/20"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}

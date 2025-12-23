@@ -10,7 +10,6 @@ interface Project {
   role: string;
   tools: string[];
   icon: React.ReactNode;
-  accentColor: string;
 }
 
 interface ProjectModalProps {

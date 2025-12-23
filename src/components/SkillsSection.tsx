@@ -1,21 +1,26 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Gamepad2, Globe, Cpu, Palette } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Level Design",
+    icon: <Gamepad2 className="w-6 h-6 text-primary" />,
     skills: ["Environmental Storytelling", "Player Flow", "Spatial Composition", "Lighting Design"],
   },
   {
     title: "World Building",
+    icon: <Globe className="w-6 h-6 text-primary" />,
     skills: ["Lore Integration", "Atmospheric Design", "Landmark Creation", "Cultural Authenticity"],
   },
   {
     title: "Game Engines",
+    icon: <Cpu className="w-6 h-6 text-primary" />,
     skills: ["Unreal Engine 5", "Unity", "CryEngine", "Godot"],
   },
   {
     title: "3D & Tools",
+    icon: <Palette className="w-6 h-6 text-primary" />,
     skills: ["Maya", "Blender", "Substance Painter", "World Machine"],
   },
 ];
@@ -44,53 +49,62 @@ const SkillsSection = () => {
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-primary" />
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-gradient">
             Skills & Tools
           </h2>
         </motion.div>
 
-        {/* Skills grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        {/* Skills grid - Glassmorphism cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.15 }}
+              className="group relative p-6 rounded-xl bg-secondary/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              whileHover={{ 
+                y: -5,
+                boxShadow: "0 20px 40px -20px hsla(262, 83%, 58%, 0.2)",
+              }}
             >
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background: "radial-gradient(circle at center, hsla(262, 83%, 58%, 0.08) 0%, transparent 70%)",
+                }}
+              />
+
               {/* Category header */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-1 h-8 bg-primary rounded-full" />
-                <h3 className="font-display text-xl font-semibold text-foreground">
+                <div className="w-12 h-12 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:shadow-[0_0_20px_hsla(262,83%,58%,0.3)] transition-all duration-300">
+                  {category.icon}
+                </div>
+                <h3 className="font-display text-xl font-semibold text-gradient">
                   {category.title}
                 </h3>
               </div>
 
               {/* Skills list */}
-              <div className="space-y-4 pl-5">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.div
+                  <motion.span
                     key={skill}
-                    className="group flex items-center gap-4"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: categoryIndex * 0.15 + skillIndex * 0.1 }}
+                    className="badge-primary"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary group-hover:shadow-[0_0_8px_hsla(187,100%,50%,0.5)] transition-all duration-300" />
-                    <span className="font-body text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      {skill}
-                    </span>
-                  </motion.div>
+                    {skill}
+                  </motion.span>
                 ))}
               </div>
 
-              {/* Decorative line */}
-              <motion.div
-                className="mt-8 h-px bg-gradient-to-r from-primary/20 via-primary/10 to-transparent"
-                initial={{ scaleX: 0, originX: 0 }}
-                animate={isInView ? { scaleX: 1 } : {}}
-                transition={{ duration: 1, delay: categoryIndex * 0.2 + 0.5 }}
-              />
+              {/* HUD corners */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t border-l border-primary/30 group-hover:border-primary/60 transition-colors duration-300" />
+              <div className="absolute top-2 right-2 w-3 h-3 border-t border-r border-primary/30 group-hover:border-primary/60 transition-colors duration-300" />
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-primary/30 group-hover:border-primary/60 transition-colors duration-300" />
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-primary/30 group-hover:border-primary/60 transition-colors duration-300" />
             </motion.div>
           ))}
         </div>

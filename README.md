@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Arjun S — Portfolio
 
-## Project info
+Welcome to my personal portfolio built with Vite, React, TypeScript and Tailwind CSS. This repository contains the source code for my portfolio website where I showcase projects, blog posts, and contact information.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Live site
 
-## How can I edit this code?
+- URL: REPLACE_WITH_YOUR_LIVE_URL
 
-There are several ways of editing your application.
+About
 
-**Use Lovable**
+I’m Arjun — a software developer focused on building web applications with a strong interest in TypeScript, React, and UI design. This portfolio highlights selected projects, case studies, and links to source code.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Technologies
 
-Changes made via Lovable will be committed automatically to this repo.
+- TypeScript
+- React
+- Vite
+- Tailwind CSS
+- shadcn-ui
 
-**Use your preferred IDE**
+Local development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone the repository and run the development server locally:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone the repo
+git clone https://github.com/Arjun-Kurapati/arjun-s-portfolio.git
+cd arjun-s-portfolio
 
-Follow these steps:
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build for production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Build
+npm run build
 
-**Use GitHub Codespaces**
+# Preview production build locally
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Updating content
 
-## What technologies are used for this project?
+- To update the README or any content, edit files and push a branch/PR to this repository.
+- If you use the UI components in `src/components`, keep styles consistent and follow existing patterns.
 
-This project is built with:
+Folder structure (high level)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- src/ — application source code
+  - components/ — reusable UI components
+  - pages/ — page-level components
+  - styles/ — global styles and Tailwind config
 
-## How can I deploy this project?
+Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project can be deployed to platforms like Vercel, Netlify, or GitHub Pages. For Vercel or Netlify, connect the repository and set the build command to `npm run build` and the output directory to `dist`.
 
-## Can I connect a custom domain to my Lovable project?
+Customizing
 
-Yes, you can!
+- Replace the placeholder `REPLACE_WITH_YOUR_LIVE_URL` with your site's URL.
+- Edit the content in `src` (pages and components) to update your projects and about sections.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contact
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- GitHub: https://github.com/Arjun-Kurapati
+- Email: REPLACE_WITH_YOUR_EMAIL (optional)
+
+License
+
+This repository is open source. Add a LICENSE file if you want a specific license.
+
+---
+
+Notes
+
+- I replaced the default Lovable project README with a portfolio-focused README. If you'd like, I can also update the site content, bio, or project list inside `src/` — tell me what to change and I will make the edits.

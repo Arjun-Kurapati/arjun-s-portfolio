@@ -54,37 +54,15 @@ const ProjectCard = ({
           </motion.p>
         )}
 
-        {/* Image container with golden border */}
-        <div className="relative rounded-lg overflow-hidden border-2 border-primary/60 group-hover:border-primary transition-colors duration-300">
-          {/* Golden glow effect on hover */}
-          <motion.div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
-            style={{
-              boxShadow: "inset 0 0 60px hsla(262, 83%, 58%, 0.2)",
-            }}
-          />
-
+        {/* Image container */}
+        <div className="relative rounded-lg overflow-hidden">
           {/* Project image */}
           <div className="aspect-video bg-secondary/80 relative overflow-hidden">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-
-            {/* Engine/Tool badge */}
-            <div className="absolute bottom-4 left-4 flex items-center gap-2">
-              <div className="w-8 h-8 rounded bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border/50">
-                {icon}
-              </div>
-            </div>
-
-            {/* Hover indicator */}
-            <motion.div
-              className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <ExternalLink className="w-5 h-5 text-primary" />
-            </motion.div>
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </div>
 
@@ -97,12 +75,6 @@ const ProjectCard = ({
         >
           {role}
         </motion.p>
-
-        {/* HUD corners on image container */}
-        <div className="absolute top-[calc(1.5rem+24px)] left-0 w-4 h-4 border-t-2 border-l-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
-        <div className="absolute top-[calc(1.5rem+24px)] right-0 w-4 h-4 border-t-2 border-r-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
-        <div className="absolute bottom-[calc(1.5rem+24px)] left-0 w-4 h-4 border-b-2 border-l-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
-        <div className="absolute bottom-[calc(1.5rem+24px)] right-0 w-4 h-4 border-b-2 border-r-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
       </motion.div>
     );
   }

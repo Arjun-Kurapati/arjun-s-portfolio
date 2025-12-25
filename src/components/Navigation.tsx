@@ -14,8 +14,8 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "Personal Projects", href: "#personal-projects", hasDropdown: true, category: "personal" },
-  { label: "Professional Work", href: "#professional-work", hasDropdown: true, category: "professional" },
   { label: "Group Projects", href: "#group-projects", hasDropdown: true, category: "group" },
+  { label: "Professional Work", href: "#professional-work", hasDropdown: true, category: "professional" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "/FelipeFleming_CV.pdf", isExternal: true },
   { label: "Contact", href: "#contact" },

@@ -112,14 +112,6 @@ const HeroSection = () => {
             <span>Warsaw, Poland</span>
           </motion.div>
           
-          <motion.p
-            className="font-accent text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-          >
-            "Designing immersive worlds players remember"
-          </motion.p>
         </motion.div>
       </div>
       

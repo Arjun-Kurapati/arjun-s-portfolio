@@ -11,6 +11,7 @@ export interface Project {
   icon: string;
   category: "personal" | "group";
   image?: string;
+  modalImage?: string;
   genre?: string;
 }
 
@@ -26,7 +27,8 @@ export const projects: Project[] = [
     icon: "Gamepad2",
     category: "personal",
     genre: "Third Person · Exploration Adventure",
-    image: "/images/the-light-remains.jpg",
+    image: "/images/the-light-remains-thumb.jpg",
+    modalImage: "/images/the-light-remains.jpg",
   },
   {
     id: 2,

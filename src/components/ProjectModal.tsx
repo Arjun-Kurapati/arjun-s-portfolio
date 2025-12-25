@@ -10,6 +10,7 @@ interface Project {
   role: string;
   tools: string[];
   icon: React.ReactNode;
+  image?: string;
 }
 
 interface ProjectModalProps {
@@ -73,18 +74,28 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </button>
 
             {/* Header area */}
-            <div className="relative h-48 md:h-64 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsla(187,100%,50%,0.1),transparent_70%)]" />
-              <motion.div
-                className="text-8xl md:text-9xl opacity-20"
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                  rotate: [0, 2, -2, 0]
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
-                {project.icon}
-              </motion.div>
+            <div className="relative h-48 md:h-80 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
+              {project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsla(187,100%,50%,0.1),transparent_70%)]" />
+                  <motion.div
+                    className="text-8xl md:text-9xl opacity-20"
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      rotate: [0, 2, -2, 0]
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    {project.icon}
+                  </motion.div>
+                </>
+              )}
               
               {/* HUD elements */}
               <div className="absolute top-4 left-4 flex items-center gap-2">

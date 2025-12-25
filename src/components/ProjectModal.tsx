@@ -125,14 +125,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <div className="gradient-line mb-8" />
 
               <div className="space-y-6">
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                    Overview
-                  </h3>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    {project.fullDescription}
-                  </p>
-                </div>
 
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

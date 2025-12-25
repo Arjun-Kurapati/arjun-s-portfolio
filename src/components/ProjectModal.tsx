@@ -2,12 +2,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect } from "react";
 
-interface FocusArea {
-  title: string;
-  description: string;
-  bullets?: string[];
-}
-
 interface Project {
   id: number | string;
   title: string;
@@ -17,8 +11,6 @@ interface Project {
   tools: string[];
   icon: React.ReactNode;
   image?: string;
-  projectOverview?: string;
-  focusAreas?: FocusArea[];
 }
 
 interface ProjectModalProps {
@@ -132,65 +124,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
               <div className="gradient-line mb-8" />
 
-              {/* Two-column layout for Project Overview and Focus Areas */}
-              {(project.projectOverview || project.focusAreas) && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
-                  {/* Project Overview */}
-                  {project.projectOverview && (
-                    <div>
-                      <div className="bg-primary/20 border-l-4 border-primary px-4 py-2 mb-4">
-                        <h3 className="font-display text-lg font-semibold text-accent-gold tracking-wide">
-                          Project Overview
-                        </h3>
-                      </div>
-                      <div className="font-body text-muted-foreground leading-relaxed whitespace-pre-line">
-                        {project.projectOverview.split('\n').map((line, i) => {
-                          if (line.startsWith('•')) {
-                            return (
-                              <p key={i} className="ml-4 my-1">
-                                <span className="text-primary">•</span>
-                                <span className="text-accent-gold">{line.slice(1)}</span>
-                              </p>
-                            );
-                          }
-                          return <p key={i} className="my-2">{line}</p>;
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Focus Areas */}
-                  {project.focusAreas && (
-                    <div>
-                      <div className="bg-primary/20 border-l-4 border-primary px-4 py-2 mb-4">
-                        <h3 className="font-display text-lg font-semibold text-accent-gold tracking-wide">
-                          Focus Areas
-                        </h3>
-                      </div>
-                      <ul className="space-y-4">
-                        {project.focusAreas.map((area, i) => (
-                          <li key={i}>
-                            <span className="text-primary">• </span>
-                            <span className="text-accent-gold font-semibold">{area.title}:</span>
-                            <span className="text-muted-foreground ml-1">{area.description}</span>
-                            {area.bullets && (
-                              <ul className="ml-6 mt-2 space-y-1">
-                                {area.bullets.map((bullet, j) => (
-                                  <li key={j} className="text-muted-foreground">
-                                    <span className="text-primary">• </span>{bullet}
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )}
-
               <div className="space-y-6">
+
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">
                     Tools & Technologies

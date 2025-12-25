@@ -9,6 +9,9 @@ interface ProjectCardProps {
   icon: React.ReactNode;
   index: number;
   onClick?: () => void;
+  image?: string;
+  genre?: string;
+  hasImage?: boolean;
 }
 
 const ProjectCard = ({
@@ -19,7 +22,102 @@ const ProjectCard = ({
   icon,
   index,
   onClick,
+  image,
+  genre,
+  hasImage = false,
 }: ProjectCardProps) => {
+  // Image-based card layout (for personal projects with images)
+  if (hasImage && image) {
+    return (
+      <motion.div
+        className="relative group cursor-pointer"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: index * 0.15, ease: [0.4, 0, 0.2, 1] }}
+        whileHover={{ 
+          scale: 1.02, 
+          y: -5,
+          transition: { duration: 0.3 } 
+        }}
+        onClick={onClick}
+      >
+        {/* Genre label at top */}
+        {genre && (
+          <motion.p 
+            className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 + index * 0.15 }}
+          >
+            {genre}
+          </motion.p>
+        )}
+
+        {/* Image container with golden border */}
+        <div className="relative rounded-lg overflow-hidden border-2 border-primary/60 group-hover:border-primary transition-colors duration-300">
+          {/* Golden glow effect on hover */}
+          <motion.div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
+            style={{
+              boxShadow: "inset 0 0 60px hsla(262, 83%, 58%, 0.2)",
+            }}
+          />
+
+          {/* Project image */}
+          <div className="aspect-video bg-secondary/80 relative overflow-hidden">
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-background/20" />
+            
+            {/* Title overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center px-4 drop-shadow-lg">
+                {title}
+              </h3>
+            </div>
+
+            {/* Engine/Tool badge */}
+            <div className="absolute bottom-4 left-4 flex items-center gap-2">
+              <div className="w-8 h-8 rounded bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border/50">
+                {icon}
+              </div>
+            </div>
+
+            {/* Hover indicator */}
+            <motion.div
+              className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <ExternalLink className="w-5 h-5 text-primary" />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Role label at bottom */}
+        <motion.p 
+          className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mt-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 + index * 0.15 }}
+        >
+          {role}
+        </motion.p>
+
+        {/* HUD corners on image container */}
+        <div className="absolute top-[calc(1.5rem+24px)] left-0 w-4 h-4 border-t-2 border-l-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
+        <div className="absolute top-[calc(1.5rem+24px)] right-0 w-4 h-4 border-t-2 border-r-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
+        <div className="absolute bottom-[calc(1.5rem+24px)] left-0 w-4 h-4 border-b-2 border-l-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
+        <div className="absolute bottom-[calc(1.5rem+24px)] right-0 w-4 h-4 border-b-2 border-r-2 border-primary/40 group-hover:border-primary/80 transition-colors duration-300" />
+      </motion.div>
+    );
+  }
+
+  // Default card layout (for group projects without images)
   return (
     <motion.div
       className="relative group cursor-pointer rounded-xl p-6 md:p-8 bg-secondary/50 backdrop-blur-sm border border-primary/20 hover:border-primary/40 transition-all duration-300"

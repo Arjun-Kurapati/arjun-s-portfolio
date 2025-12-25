@@ -10,6 +10,8 @@ export interface Project {
   tools: string[];
   icon: string;
   category: "personal" | "group";
+  image?: string;
+  genre?: string;
 }
 
 export const projects: Project[] = [
@@ -23,6 +25,8 @@ export const projects: Project[] = [
     tools: ["Unreal Engine 5", "Maya", "Substance"],
     icon: "Gamepad2",
     category: "personal",
+    genre: "Third Person - Horror",
+    image: "/placeholder.svg", // Replace with your actual project image
   },
   {
     id: 2,
@@ -33,6 +37,8 @@ export const projects: Project[] = [
     tools: ["Unity", "World Machine", "Photoshop"],
     icon: "Map",
     category: "personal",
+    genre: "Open World - Adventure",
+    image: "/placeholder.svg", // Replace with your actual project image
   },
   // Group Projects
   {

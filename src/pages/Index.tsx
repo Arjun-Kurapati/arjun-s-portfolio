@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
+
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import EasterEgg from "@/components/EasterEgg";
@@ -58,10 +58,6 @@ const Index = () => {
           
           <div id="personal-projects">
             <ProjectsSection />
-          </div>
-          
-          <div id="group-projects">
-            <SkillsSection />
           </div>
           
           <div id="professional-work">

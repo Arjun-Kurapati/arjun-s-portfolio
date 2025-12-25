@@ -60,12 +60,12 @@ const Index = () => {
             <ProjectsSection />
           </div>
           
-          <div id="professional-work">
-            <ExperienceSection />
-          </div>
-          
           <div id="group-projects">
             <SkillsSection />
+          </div>
+          
+          <div id="professional-work">
+            <ExperienceSection />
           </div>
           
           <div id="about">

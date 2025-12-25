@@ -75,15 +75,15 @@ const ScreenshotGallery = ({ images, title = "Overview Screenshots" }: Screensho
       </div>
 
       {/* Thumbnail Strip */}
-      <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+      <div className="mt-4 flex gap-1.5 overflow-x-auto pb-2 scrollbar-thin justify-center">
         {images.map((image, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`relative flex-shrink-0 w-20 h-14 md:w-24 md:h-16 rounded-md overflow-hidden border-2 transition-all duration-300 ${
+            className={`relative flex-shrink-0 w-14 h-10 md:w-16 md:h-11 rounded overflow-hidden border-2 transition-all duration-300 ${
               index === currentIndex
-                ? "border-primary ring-2 ring-primary/30"
-                : "border-border/50 hover:border-primary/50 opacity-60 hover:opacity-100"
+                ? "border-primary ring-1 ring-primary/30"
+                : "border-border/50 hover:border-primary/50 opacity-50 hover:opacity-100"
             }`}
           >
             <img

@@ -9,7 +9,7 @@ export interface Project {
   role: string;
   tools: string[];
   icon: string;
-  category: "personal" | "professional" | "group";
+  category: "personal" | "group";
 }
 
 export const projects: Project[] = [
@@ -34,30 +34,9 @@ export const projects: Project[] = [
     icon: "Map",
     category: "personal",
   },
-  // Professional Work
-  {
-    id: 3,
-    title: "Summit Protocol",
-    description: "Vertical gameplay focused mountain climbing experience",
-    fullDescription: "A vertical slice demonstrating innovative mountain climbing mechanics with dynamic handholds, weather hazards, and breathtaking vistas. Each section of the climb presents unique challenges while maintaining fluid player progression.",
-    role: "Level Designer",
-    tools: ["Unreal Engine 5", "Houdini", "ZBrush"],
-    icon: "Mountain",
-    category: "professional",
-  },
-  {
-    id: 4,
-    title: "Nexus Hub",
-    description: "Central multiplayer hub with seamless instance transitions",
-    fullDescription: "A sophisticated multiplayer hub environment designed for seamless player interaction and instance transitions. The space balances social gathering areas with clear navigation pathways to various game modes.",
-    role: "Level Designer",
-    tools: ["Unity", "Blender", "Figma"],
-    icon: "Compass",
-    category: "professional",
-  },
   // Group Projects
   {
-    id: 5,
+    id: 3,
     title: "Metro Descent",
     description: "Underground subway system with branching narrative paths",
     fullDescription: "A sprawling underground subway network featuring multiple branching paths that reflect player choices. Environmental storytelling reveals the history of the collapsed civilization above through artifacts and architectural details.",
@@ -67,7 +46,7 @@ export const projects: Project[] = [
     category: "group",
   },
   {
-    id: 6,
+    id: 4,
     title: "Layer Zero",
     description: "Puzzle platformer with dimensional shifting mechanics",
     fullDescription: "An innovative puzzle platformer where players shift between dimensional layers to solve intricate environmental puzzles. Each layer presents the same space differently, requiring creative thinking and precise timing.",

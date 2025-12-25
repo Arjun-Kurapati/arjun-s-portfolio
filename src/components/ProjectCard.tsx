@@ -30,7 +30,7 @@ const ProjectCard = ({
   if (hasImage && image) {
     return (
       <motion.div
-        className="relative group cursor-pointer"
+        className="relative group cursor-pointer p-2"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -42,20 +42,16 @@ const ProjectCard = ({
         }}
         onClick={onClick}
       >
-        {/* Genre label at top */}
-        {genre && (
-          <motion.p 
-            className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 + index * 0.15 }}
-          >
-            {genre}
-          </motion.p>
-        )}
+        {/* Animated glow effect on hover */}
+        <motion.div
+          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at center, hsla(262, 83%, 58%, 0.2) 0%, transparent 70%)",
+          }}
+        />
 
         {/* Image container */}
-        <div className="relative rounded-lg overflow-hidden">
+        <div className="relative rounded-lg overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-300">
           {/* Project image */}
           <div className="aspect-video bg-secondary/80 relative overflow-hidden">
             <img 
@@ -66,15 +62,21 @@ const ProjectCard = ({
           </div>
         </div>
 
-        {/* Role label at bottom */}
-        <motion.p 
-          className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mt-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 + index * 0.15 }}
+        {/* Hover indicator - External link button */}
+        <motion.div
+          className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+          whileHover={{ scale: 1.1 }}
         >
-          {role}
-        </motion.p>
+          <div className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 flex items-center justify-center">
+            <ExternalLink className="w-5 h-5 text-primary" />
+          </div>
+        </motion.div>
+
+        {/* HUD corners */}
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-300 rounded-tl" />
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-300 rounded-tr" />
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-300 rounded-bl" />
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-300 rounded-br" />
       </motion.div>
     );
   }

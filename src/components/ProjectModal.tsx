@@ -3,17 +3,17 @@ import { X } from "lucide-react";
 import { useEffect } from "react";
 import ScreenshotGallery from "./ScreenshotGallery";
 
-// Placeholder images - replace with your actual screenshots
+// Project screenshots in sequence
 const projectScreenshots = [
-  "/images/screenshot-1.jpg",
-  "/images/screenshot-2.jpg",
-  "/images/screenshot-3.jpg",
-  "/images/screenshot-4.jpg",
-  "/images/screenshot-5.jpg",
-  "/images/screenshot-6.jpg",
-  "/images/screenshot-7.jpg",
-  "/images/screenshot-8.jpg",
-  "/images/screenshot-9.jpg",
+  "/images/screenshot-01.png",
+  "/images/screenshot-02.jpg",
+  "/images/screenshot-03.jpg",
+  "/images/screenshot-04.jpg",
+  "/images/screenshot-05.jpg",
+  "/images/screenshot-06.jpg",
+  "/images/screenshot-07.jpg",
+  "/images/screenshot-08.jpg",
+  "/images/screenshot-09.jpg",
   "/images/screenshot-10.jpg",
 ];
 

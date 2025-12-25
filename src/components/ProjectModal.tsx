@@ -185,6 +185,23 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               {/* Screenshot Gallery */}
               <ScreenshotGallery images={projectScreenshots} />
 
+              {/* Game Design Section */}
+              <div className="mb-8">
+                <div className="bg-gradient-to-r from-primary/80 to-primary/40 rounded-md px-4 py-2 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-primary-foreground text-center">
+                    Game Design
+                  </h3>
+                </div>
+                <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+                  <p>
+                    In <span className="text-primary font-semibold">The Light Remains</span>, the focus is on <span className="text-primary font-semibold">exploration</span> and <span className="text-primary font-semibold">atmosphere</span>. The player learns about the world through <span className="text-primary">movement</span>, <span className="text-primary">level layout</span>, and <span className="text-primary">light</span>, without relying on heavy UI or complex systems.
+                  </p>
+                  <p>
+                    The gameplay uses simple <span className="text-primary font-semibold">Blueprint-based triggers</span> such as <span className="text-primary">lighting changes</span>, <span className="text-primary">object visibility</span>, and <span className="text-primary">dialogue moments</span> that react to player progress. The full experience lasts around <span className="text-primary font-semibold">30 minutes</span> and tells its story through <span className="text-primary">environment</span> and <span className="text-primary">pacing</span>.
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

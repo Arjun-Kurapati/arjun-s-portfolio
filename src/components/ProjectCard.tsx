@@ -54,8 +54,16 @@ const ProjectCard = ({
           </motion.p>
         )}
 
-        {/* Image container */}
-        <div className="relative rounded-lg overflow-hidden">
+        {/* Image container with border */}
+        <div className="relative rounded-lg overflow-hidden border-2 border-primary/60 group-hover:border-primary transition-colors duration-300">
+          {/* Glow effect on hover */}
+          <motion.div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
+            style={{
+              boxShadow: "inset 0 0 60px hsla(262, 83%, 58%, 0.3), 0 0 30px hsla(262, 83%, 58%, 0.2)",
+            }}
+          />
+
           {/* Project image */}
           <div className="aspect-video bg-secondary/80 relative overflow-hidden">
             <img 

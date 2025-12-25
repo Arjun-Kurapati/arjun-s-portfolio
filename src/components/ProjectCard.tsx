@@ -42,20 +42,16 @@ const ProjectCard = ({
         }}
         onClick={onClick}
       >
-        {/* Genre label at top */}
-        {genre && (
-          <motion.p 
-            className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 + index * 0.15 }}
-          >
-            {genre}
-          </motion.p>
-        )}
-
-        {/* Image container */}
-        <div className="relative rounded-lg overflow-hidden">
+        {/* Image container with border and glow */}
+        <div className="relative rounded-lg overflow-hidden border border-primary/30 group-hover:border-primary/60 transition-all duration-300 group-hover:shadow-[0_0_30px_hsla(262,83%,58%,0.3)]">
+          {/* Animated glow effect on hover */}
+          <motion.div
+            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
+            style={{
+              background: "radial-gradient(circle at center, hsla(262, 83%, 58%, 0.15) 0%, transparent 70%)",
+            }}
+          />
+          
           {/* Project image */}
           <div className="aspect-video bg-secondary/80 relative overflow-hidden">
             <img 
@@ -64,17 +60,17 @@ const ProjectCard = ({
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-        </div>
 
-        {/* Role label at bottom */}
-        <motion.p 
-          className="text-center font-heading text-sm md:text-base tracking-wider text-foreground/80 mt-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 + index * 0.15 }}
-        >
-          {role}
-        </motion.p>
+          {/* Hover indicator button */}
+          <motion.div
+            className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+            whileHover={{ scale: 1.1 }}
+          >
+            <div className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 flex items-center justify-center">
+              <ExternalLink className="w-5 h-5 text-primary" />
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     );
   }

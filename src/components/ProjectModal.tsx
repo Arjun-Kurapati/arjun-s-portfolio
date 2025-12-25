@@ -74,7 +74,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </button>
 
             {/* Header area */}
-            <div className="relative w-full bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden" style={{ aspectRatio: '3/1' }}>
+            <div className="relative h-48 md:h-80 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
               {project.image ? (
                 <img 
                   src={project.image} 

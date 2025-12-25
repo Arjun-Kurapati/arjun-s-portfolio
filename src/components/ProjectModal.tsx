@@ -186,6 +186,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <ScreenshotGallery images={projectScreenshots} />
 
               {/* Game Design Section */}
+              <div className="mt-12" />
               <div className="mb-8">
                 <div className="bg-gradient-to-r from-primary/80 to-primary/40 rounded-md px-4 py-2 mb-6">
                   <h3 className="font-display text-lg font-semibold text-primary-foreground text-center">

@@ -98,6 +98,7 @@ const ProjectsSection = () => {
   return (
     <>
       <ProjectSection category="personal" title="Personal Projects" id="personal-projects" />
+      <ProjectSection category="professional" title="Professional Work" id="professional-work" />
       <ProjectSection category="group" title="Group Projects" id="group-projects" />
 
       {/* Project modal */}

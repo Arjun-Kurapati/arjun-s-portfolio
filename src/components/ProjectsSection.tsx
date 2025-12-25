@@ -107,7 +107,8 @@ const ProjectsSection = () => {
       <ProjectModal
         project={selectedProject ? {
           ...selectedProject,
-          icon: iconComponents[selectedProject.icon]
+          icon: iconComponents[selectedProject.icon],
+          image: selectedProject.modalImage || selectedProject.image
         } : null}
         onClose={() => setSelectedProject(null)}
       />

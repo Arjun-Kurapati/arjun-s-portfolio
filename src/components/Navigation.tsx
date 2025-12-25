@@ -1,12 +1,21 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { projects, getProjectsByCategory, Project } from "@/data/projects";
 
-const navLinks = [
+interface NavLink {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+  hasDropdown?: boolean;
+  category?: Project["category"];
+}
+
+const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
-  { label: "Personal Projects", href: "#personal-projects" },
-  { label: "Professional Work", href: "#professional-work" },
-  { label: "Group Projects", href: "#group-projects" },
+  { label: "Personal Projects", href: "#personal-projects", hasDropdown: true, category: "personal" },
+  { label: "Professional Work", href: "#professional-work", hasDropdown: true, category: "professional" },
+  { label: "Group Projects", href: "#group-projects", hasDropdown: true, category: "group" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "/FelipeFleming_CV.pdf", isExternal: true },
   { label: "Contact", href: "#contact" },
@@ -15,6 +24,7 @@ const navLinks = [
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { scrollY } = useScroll();
   
   const bgOpacity = useTransform(scrollY, [0, 100], [0, 0.95]);
@@ -27,8 +37,9 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (link: typeof navLinks[0]) => {
+  const handleNavClick = (link: NavLink) => {
     setIsOpen(false);
+    setActiveDropdown(null);
     if (link.isExternal) {
       window.open(link.href, "_blank");
     } else if (link.href === "#home") {
@@ -39,6 +50,12 @@ const Navigation = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
+  };
+
+  const handleProjectClick = (projectId: number) => {
+    setActiveDropdown(null);
+    // Dispatch custom event to open project modal
+    window.dispatchEvent(new CustomEvent('openProject', { detail: { projectId } }));
   };
 
   return (
@@ -72,19 +89,51 @@ const Navigation = () => {
           </motion.a>
 
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link, index) => (
-              <motion.button
+              <div
                 key={link.label}
-                onClick={() => handleNavClick(link)}
-                className="relative font-heading text-xs tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300 group"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.05 }}
+                className="relative"
+                onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
-              </motion.button>
+                <motion.button
+                  onClick={() => handleNavClick(link)}
+                  className="relative font-heading text-xs tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300 group flex items-center gap-1"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.05 }}
+                >
+                  {link.label}
+                  {link.hasDropdown && (
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                  )}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
+                </motion.button>
+
+                {/* Dropdown menu */}
+                {link.hasDropdown && link.category && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 min-w-[200px] bg-background/95 backdrop-blur-xl border border-primary/20 rounded-lg overflow-hidden shadow-xl"
+                    initial={{ opacity: 0, y: -10, pointerEvents: "none" }}
+                    animate={activeDropdown === link.label 
+                      ? { opacity: 1, y: 0, pointerEvents: "auto" }
+                      : { opacity: 0, y: -10, pointerEvents: "none" }
+                    }
+                    transition={{ duration: 0.2 }}
+                  >
+                    {getProjectsByCategory(link.category).map((project) => (
+                      <button
+                        key={project.id}
+                        onClick={() => handleProjectClick(project.id)}
+                        className="w-full text-left px-4 py-3 font-body text-sm text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-colors duration-200 border-b border-primary/10 last:border-b-0"
+                      >
+                        {project.title}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -109,26 +158,51 @@ const Navigation = () => {
         }}
       >
         <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" />
-        <div className="relative flex flex-col items-center justify-center h-full gap-8">
+        <div className="relative flex flex-col items-center justify-center h-full gap-6 overflow-y-auto py-20">
           {navLinks.map((link, index) => (
-            <motion.button
-              key={link.label}
-              onClick={() => handleNavClick(link)}
-              className="font-display text-2xl text-foreground hover:text-primary transition-colors duration-300"
-              variants={{
-                open: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 0.1 + index * 0.05 }
-                },
-                closed: { 
-                  opacity: 0, 
-                  y: 20 
-                },
-              }}
-            >
-              {link.label}
-            </motion.button>
+            <div key={link.label} className="text-center">
+              <motion.button
+                onClick={() => !link.hasDropdown && handleNavClick(link)}
+                className="font-display text-2xl text-foreground hover:text-primary transition-colors duration-300"
+                variants={{
+                  open: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.1 + index * 0.05 }
+                  },
+                  closed: { 
+                    opacity: 0, 
+                    y: 20 
+                  },
+                }}
+              >
+                {link.label}
+              </motion.button>
+              
+              {/* Mobile dropdown items */}
+              {link.hasDropdown && link.category && (
+                <motion.div
+                  className="mt-2 space-y-2"
+                  variants={{
+                    open: { opacity: 1 },
+                    closed: { opacity: 0 },
+                  }}
+                >
+                  {getProjectsByCategory(link.category).map((project) => (
+                    <button
+                      key={project.id}
+                      onClick={() => {
+                        handleProjectClick(project.id);
+                        setIsOpen(false);
+                      }}
+                      className="block w-full text-muted-foreground hover:text-primary text-base transition-colors"
+                    >
+                      {project.title}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </div>
           ))}
         </div>
       </motion.div>

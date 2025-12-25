@@ -185,21 +185,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               {/* Screenshot Gallery */}
               <ScreenshotGallery images={projectScreenshots} />
 
-              {/* Game Design Section */}
-              <div className="mt-12" />
-              <div className="mb-8">
-                <div className="bg-gradient-to-r from-primary/80 to-primary/40 rounded-md px-4 py-2 mb-6">
-                  <h3 className="font-display text-lg font-semibold text-primary-foreground text-center">
-                    Game Design
-                  </h3>
-                </div>
-                <div className="space-y-5 font-body text-muted-foreground leading-relaxed text-justify max-w-4xl mx-auto">
-                  <p>
-                    In <span className="text-primary font-semibold">The Light Remains</span>, the focus is on <span className="text-primary font-semibold">exploration</span> and <span className="text-primary font-semibold">atmosphere</span>. The player learns about the world through <span className="text-primary font-semibold">movement</span>, <span className="text-primary font-semibold">level layout</span>, and <span className="text-primary font-semibold">light</span>, without relying on heavy UI or complex systems.
-                  </p>
-                </div>
-              </div>
-
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

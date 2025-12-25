@@ -1,83 +1,32 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Gamepad2, Map, Mountain, Compass, Building, Layers } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
+import { projects, getProjectsByCategory, getIconComponent, Project } from "@/data/projects";
 
-interface Project {
-  id: number;
+const iconComponents: Record<string, React.ReactNode> = {
+  Gamepad2: <Gamepad2 className="w-8 h-8 text-primary" />,
+  Map: <Map className="w-8 h-8 text-primary" />,
+  Mountain: <Mountain className="w-8 h-8 text-primary" />,
+  Compass: <Compass className="w-8 h-8 text-primary" />,
+  Building: <Building className="w-8 h-8 text-primary" />,
+  Layers: <Layers className="w-8 h-8 text-primary" />,
+};
+
+interface ProjectSectionProps {
+  category: Project["category"];
   title: string;
-  description: string;
-  fullDescription: string;
-  role: string;
-  tools: string[];
-  icon: React.ReactNode;
+  id: string;
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Abandoned Station",
-    description: "A atmospheric horror level set in a derelict space station",
-    fullDescription: "A meticulously crafted atmospheric horror experience set within the decaying corridors of a once-thriving orbital research station. Players navigate through environmental storytelling, discovering the fate of the crew through subtle visual cues and deliberate level pacing.",
-    role: "Level Designer",
-    tools: ["Unreal Engine 5", "Maya", "Substance"],
-    icon: <Gamepad2 className="w-8 h-8 text-primary" />,
-  },
-  {
-    id: 2,
-    title: "Forgotten Valley",
-    description: "Open-world exploration zone with dynamic weather systems",
-    fullDescription: "An expansive open-world environment featuring dynamic weather systems and time-of-day progression. The valley rewards exploration with hidden caves, ancient ruins, and emergent gameplay opportunities scattered throughout the landscape.",
-    role: "Level Designer",
-    tools: ["Unity", "World Machine", "Photoshop"],
-    icon: <Map className="w-8 h-8 text-primary" />,
-  },
-  {
-    id: 3,
-    title: "Summit Protocol",
-    description: "Vertical gameplay focused mountain climbing experience",
-    fullDescription: "A vertical slice demonstrating innovative mountain climbing mechanics with dynamic handholds, weather hazards, and breathtaking vistas. Each section of the climb presents unique challenges while maintaining fluid player progression.",
-    role: "Level Designer",
-    tools: ["Unreal Engine 5", "Houdini", "ZBrush"],
-    icon: <Mountain className="w-8 h-8 text-primary" />,
-  },
-  {
-    id: 4,
-    title: "Nexus Hub",
-    description: "Central multiplayer hub with seamless instance transitions",
-    fullDescription: "A sophisticated multiplayer hub environment designed for seamless player interaction and instance transitions. The space balances social gathering areas with clear navigation pathways to various game modes.",
-    role: "Level Designer",
-    tools: ["Unity", "Blender", "Figma"],
-    icon: <Compass className="w-8 h-8 text-primary" />,
-  },
-  {
-    id: 5,
-    title: "Metro Descent",
-    description: "Underground subway system with branching narrative paths",
-    fullDescription: "A sprawling underground subway network featuring multiple branching paths that reflect player choices. Environmental storytelling reveals the history of the collapsed civilization above through artifacts and architectural details.",
-    role: "Level Designer",
-    tools: ["Unreal Engine 5", "3ds Max", "Quixel"],
-    icon: <Building className="w-8 h-8 text-primary" />,
-  },
-  {
-    id: 6,
-    title: "Layer Zero",
-    description: "Puzzle platformer with dimensional shifting mechanics",
-    fullDescription: "An innovative puzzle platformer where players shift between dimensional layers to solve intricate environmental puzzles. Each layer presents the same space differently, requiring creative thinking and precise timing.",
-    role: "Level Designer",
-    tools: ["Unity", "ProBuilder", "Substance"],
-    icon: <Layers className="w-8 h-8 text-primary" />,
-  },
-];
-
-const ProjectsSection = () => {
+const ProjectSection = ({ category, title, id }: ProjectSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const categoryProjects = getProjectsByCategory(category);
 
   return (
-    <section className="relative py-32 px-6" ref={ref}>
+    <section className="relative py-32 px-6" id={id} ref={ref}>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-[100px]" />
@@ -100,8 +49,7 @@ const ProjectsSection = () => {
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-primary" />
           </div>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 relative">
-            <span className="relative z-10">Personal Projects</span>
-            {/* Light glow effect behind text */}
+            <span className="relative z-10">{title}</span>
             <span 
               className="absolute inset-0 blur-2xl opacity-40 bg-gradient-to-r from-primary/50 via-purple-400/40 to-pink-400/30 -z-10"
               aria-hidden="true"
@@ -114,27 +62,54 @@ const ProjectsSection = () => {
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, index) => (
+          {categoryProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               description={project.description}
               role={project.role}
               tools={project.tools}
-              icon={project.icon}
+              icon={iconComponents[project.icon]}
               index={index}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => window.dispatchEvent(new CustomEvent('openProject', { detail: { projectId: project.id } }))}
             />
           ))}
         </div>
       </div>
+    </section>
+  );
+};
+
+const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    const handleOpenProject = (event: CustomEvent<{ projectId: number }>) => {
+      const project = projects.find(p => p.id === event.detail.projectId);
+      if (project) {
+        setSelectedProject(project);
+      }
+    };
+
+    window.addEventListener('openProject', handleOpenProject as EventListener);
+    return () => window.removeEventListener('openProject', handleOpenProject as EventListener);
+  }, []);
+
+  return (
+    <>
+      <ProjectSection category="personal" title="Personal Projects" id="personal-projects" />
+      <ProjectSection category="professional" title="Professional Work" id="professional-work" />
+      <ProjectSection category="group" title="Group Projects" id="group-projects" />
 
       {/* Project modal */}
       <ProjectModal
-        project={selectedProject}
+        project={selectedProject ? {
+          ...selectedProject,
+          icon: iconComponents[selectedProject.icon]
+        } : null}
         onClose={() => setSelectedProject(null)}
       />
-    </section>
+    </>
   );
 };
 

@@ -33,19 +33,19 @@ const ScreenshotGallery = ({ images, title = "Overview Screenshots" }: Screensho
         </h3>
       </div>
 
-      {/* Main Image Display - Medium Size */}
-      <div className="relative w-full max-w-xl mx-auto flex items-center justify-center gap-3">
+      {/* Main Image Display - Compact Size */}
+      <div className="relative w-full max-w-md mx-auto flex items-center justify-center gap-3">
         {/* Left Arrow */}
         <button
           onClick={goToPrevious}
-          className="flex-shrink-0 p-2 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-sm"
+          className="flex-shrink-0 p-1.5 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-sm"
           aria-label="Previous image"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4" />
         </button>
 
         {/* Image Container */}
-        <div className="relative w-full max-w-lg">
+        <div className="relative w-full max-w-sm">
           <div className="relative aspect-video bg-background-secondary rounded-lg overflow-hidden border border-border/50">
             <AnimatePresence mode="wait">
               <motion.img
@@ -72,20 +72,20 @@ const ScreenshotGallery = ({ images, title = "Overview Screenshots" }: Screensho
         {/* Right Arrow */}
         <button
           onClick={goToNext}
-          className="flex-shrink-0 p-2 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-sm"
+          className="flex-shrink-0 p-1.5 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-sm"
           aria-label="Next image"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Thumbnail Strip - Centered */}
-      <div className="mt-3 flex gap-1.5 justify-center flex-wrap max-w-xl">
+      {/* Thumbnail Strip - Compact & Centered */}
+      <div className="mt-2 flex gap-1 justify-center flex-wrap max-w-md">
         {images.map((image, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`flex-shrink-0 w-10 h-6 md:w-12 md:h-8 rounded-sm overflow-hidden border transition-all duration-200 ${
+            className={`flex-shrink-0 w-8 h-5 md:w-10 md:h-6 rounded-sm overflow-hidden border transition-all duration-200 ${
               index === currentIndex
                 ? "border-primary ring-1 ring-primary/30 opacity-100"
                 : "border-border/40 opacity-40 hover:opacity-80"

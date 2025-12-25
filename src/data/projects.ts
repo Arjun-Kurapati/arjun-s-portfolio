@@ -18,15 +18,15 @@ export const projects: Project[] = [
   // Personal Projects
   {
     id: 1,
-    title: "Abandoned Station",
-    description: "A atmospheric horror level set in a derelict space station",
-    fullDescription: "A meticulously crafted atmospheric horror experience set within the decaying corridors of a once-thriving orbital research station. Players navigate through environmental storytelling, discovering the fate of the crew through subtle visual cues and deliberate level pacing.",
-    role: "Level Designer",
-    tools: ["Unreal Engine 5", "Maya", "Substance"],
+    title: "The Light Remains",
+    description: "A third-person exploration adventure through mysterious landscapes",
+    fullDescription: "An immersive third-person exploration adventure set in a beautifully crafted low-poly world. Players navigate through towering rock formations, ancient bridges, and atmospheric environments while uncovering the secrets of this forgotten realm.",
+    role: "Game Design & Level Design",
+    tools: ["Unreal Engine 5"],
     icon: "Gamepad2",
     category: "personal",
-    genre: "Third Person - Horror",
-    image: "/placeholder.svg", // Replace with your actual project image
+    genre: "Third Person · Exploration Adventure",
+    image: "/images/the-light-remains.jpg",
   },
   {
     id: 2,

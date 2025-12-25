@@ -124,8 +124,61 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
               <div className="gradient-line mb-8" />
 
-              <div className="space-y-6">
+              {/* Two Column Layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                {/* Project Overview */}
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                    Project Overview
+                  </h3>
+                  <div className="space-y-4 font-body text-muted-foreground text-sm leading-relaxed">
+                    <p>
+                      The Light Remains is a solo third-person action-adventure project made in Unreal Engine 5.
+                    </p>
+                    <p>
+                      The main focus of this project is level design, exploration, and environment storytelling. Player guidance is done using lighting, paths, and landmarks, without heavy UI.
+                    </p>
+                    <p>
+                      The project was completed in 3 weeks and results in a ~30-minute playable experience set in floating islands and dangerous traversal areas.
+                    </p>
+                  </div>
+                </div>
 
+                {/* Focus Areas */}
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                    Focus Areas
+                  </h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-heading text-sm font-semibold text-primary mb-1">
+                        Level Design & Player Flow
+                      </h4>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                        Designed the full level from start to finish, focusing on clear paths, vertical traversal, exploration routes, and a strong sense of progression toward the final goal.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-heading text-sm font-semibold text-primary mb-1">
+                        Environmental Storytelling & Guidance
+                      </h4>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                        Told the story through the environment using lighting, landmarks, broken paths, and world composition—guiding the player naturally without maps or heavy UI.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-heading text-sm font-semibold text-primary mb-1">
+                        Blockout & Blueprint Implementation
+                      </h4>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                        Built the level mainly using Unreal Engine's modeling tools, with a few custom props made in Maya. Implemented gameplay logic using Blueprints, including triggers, dialogue, sound, and object visibility tied to player progression.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">
                     Tools & Technologies

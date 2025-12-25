@@ -66,21 +66,11 @@ const ProjectCard = ({
 
           {/* Project image */}
           <div className="aspect-video bg-secondary/80 relative overflow-hidden">
-            <img 
-              src={image} 
-              alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-background/20" />
-            
-            {/* Title overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center px-4 drop-shadow-lg">
-                {title}
-              </h3>
-            </div>
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
 
             {/* Engine/Tool badge */}
             <div className="absolute bottom-4 left-4 flex items-center gap-2">

@@ -71,6 +71,9 @@ const ProjectSection = ({ category, title, id }: ProjectSectionProps) => {
               tools={project.tools}
               icon={iconComponents[project.icon]}
               index={index}
+              image={project.image}
+              genre={project.genre}
+              hasImage={category === "personal" && !!project.image}
               onClick={() => window.dispatchEvent(new CustomEvent('openProject', { detail: { projectId: project.id } }))}
             />
           ))}

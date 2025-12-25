@@ -1,6 +1,21 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect } from "react";
+import ScreenshotGallery from "./ScreenshotGallery";
+
+// Placeholder images - replace with your actual screenshots
+const projectScreenshots = [
+  "/images/screenshot-1.jpg",
+  "/images/screenshot-2.jpg",
+  "/images/screenshot-3.jpg",
+  "/images/screenshot-4.jpg",
+  "/images/screenshot-5.jpg",
+  "/images/screenshot-6.jpg",
+  "/images/screenshot-7.jpg",
+  "/images/screenshot-8.jpg",
+  "/images/screenshot-9.jpg",
+  "/images/screenshot-10.jpg",
+];
 
 interface Project {
   id: number | string;
@@ -166,6 +181,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   </ul>
                 </div>
               </div>
+
+              {/* Screenshot Gallery */}
+              <ScreenshotGallery images={projectScreenshots} />
 
               <div className="space-y-6">
                 <div>

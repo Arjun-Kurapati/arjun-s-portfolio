@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Compass, Sun, BookOpen } from "lucide-react";
+import { X, Compass, BookOpen } from "lucide-react";
 import { useEffect, useRef } from "react";
 import ScreenshotGallery from "./ScreenshotGallery";
 
@@ -266,16 +266,19 @@ const ProjectModal = ({
                     </div>
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
-                        <Sun className="w-8 h-8 text-primary" />
-                      </div>
-                      <span className="font-heading text-sm text-foreground">Atmosphere</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
                         <BookOpen className="w-8 h-8 text-primary" />
                       </div>
                       <span className="font-heading text-sm text-foreground">Storytelling</span>
                     </div>
+                  </div>
+                  <div className="flex justify-center mt-8">
+                    <a 
+                      href="#" 
+                      className="px-6 py-3 font-heading text-sm text-foreground bg-primary/10 border border-primary/30 rounded-lg hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 flex items-center gap-2"
+                    >
+                      Link to Game Design Document
+                      <span className="text-primary">→</span>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -329,6 +329,29 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Level Design Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Level Design
+                  </h3>
+                </div>
+                <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+                  <p>
+                    The level is designed as a <span className="text-primary font-semibold">three-part journey</span>, where each section gradually increases in <span className="text-primary">scale</span>, <span className="text-primary">challenge</span>, and <span className="text-primary">atmosphere</span>. This structure helps the player learn the world naturally, build tension over time, and reach a meaningful ending.
+                  </p>
+                  <p>
+                    The design focuses on <span className="text-primary font-semibold">clear paths</span>, <span className="text-primary font-semibold">strong landmarks</span>, and <span className="text-primary font-semibold">visual guidance</span> so the player always understands where to go without needing a map or heavy UI.
+                  </p>
+                  <p>
+                    Exploration is encouraged through <span className="text-primary">optional routes</span>, <span className="text-primary">vertical spaces</span>, and <span className="text-primary">hidden areas</span> that reward curiosity. Instead of relying on complex mechanics, the level uses <span className="text-primary font-semibold">space</span>, <span className="text-primary font-semibold">lighting</span>, and <span className="text-primary font-semibold">pacing</span> to guide the experience.
+                  </p>
+                  <p>
+                    Each section is carefully arranged to keep the player engaged, create moments of <span className="text-primary">danger</span> and <span className="text-primary">calm</span>, and support the story told through the environment.
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

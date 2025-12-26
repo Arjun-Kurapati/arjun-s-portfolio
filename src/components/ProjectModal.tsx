@@ -350,51 +350,6 @@ const ProjectModal = ({
                     Each section is carefully arranged to keep the player engaged, create moments of <span className="text-primary">danger</span> and <span className="text-primary">calm</span>, and support the story told through the environment.
                   </p>
                 </div>
-
-                {/* Level Layout */}
-                <div className="mt-8">
-                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
-                    <h4 className="font-display text-base font-semibold text-foreground text-center">
-                      Level Layout
-                    </h4>
-                  </div>
-                  <div className="flex flex-col lg:flex-row gap-6 items-start">
-                    {/* Legend */}
-                    <div className="lg:w-48 shrink-0">
-                      <h5 className="font-heading text-sm text-foreground mb-4">Legend</h5>
-                      <div className="space-y-2 text-sm font-body text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <span className="w-4 h-4 rounded-full bg-green-500"></span>
-                          <span>= Start</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
-                          <span>= Loot Item</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="w-3 h-3 rounded-full bg-red-700"></span>
-                          <span>= Enemy</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="w-3 h-3 rounded-full bg-cyan-400"></span>
-                          <span>= Key Item</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="w-4 h-4 rounded-full bg-orange-500"></span>
-                          <span>= Finish</span>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Map Image */}
-                    <div className="flex-1 rounded-xl overflow-hidden border border-border/50 shadow-lg">
-                      <img 
-                        src="/images/level-layout-map.png" 
-                        alt="Level Layout Map" 
-                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className="space-y-6">

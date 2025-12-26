@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Compass, Sun, BookOpen } from "lucide-react";
 import { useEffect, useRef } from "react";
 import ScreenshotGallery from "./ScreenshotGallery";
 
@@ -231,21 +231,52 @@ const ProjectModal = ({
                 </div>
               </div>
 
-              {/* Narrative Summary Section */}
-              <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
-                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
-                    Narrative Summary
-                  </h3>
+              {/* Narrative Summary & Design Pillars - Two Column Layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 mb-8">
+                {/* Narrative Summary */}
+                <div>
+                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                    <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                      Narrative Summary
+                    </h3>
+                  </div>
+                  <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+                    <p>
+                      In <span className="text-primary font-semibold">The Light Remains</span>, the player explores a <span className="text-primary">broken world</span> shaped by a <span className="text-primary font-semibold">mysterious light</span> from the sky. <span className="text-primary">Floating islands</span> and <span className="text-primary">ruined paths</span> show that something went wrong long ago.
+                    </p>
+                    <p>
+                      At the end, the player learns that the light is not dangerous, but something that <span className="text-primary font-semibold">keeps the world alive</span>. The world is still broken, but it is <span className="text-primary">calm</span>.
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
-                  <p>
-                    In <span className="text-primary font-semibold">The Light Remains</span>, the player explores a <span className="text-primary">broken world</span> shaped by a <span className="text-primary font-semibold">mysterious light</span> from the sky. <span className="text-primary">Floating islands</span> and <span className="text-primary">ruined paths</span> show that something went wrong long ago.
-                  </p>
-                  
-                  <p>
-                    At the end, the player learns that the light is not dangerous, but something that <span className="text-primary font-semibold">keeps the world alive</span>. The world is still broken, but it is <span className="text-primary">calm</span>.
-                  </p>
+
+                {/* Design Pillars */}
+                <div>
+                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                    <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                      Design Pillars
+                    </h3>
+                  </div>
+                  <div className="flex justify-center gap-12 pt-4">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                        <Compass className="w-8 h-8 text-primary" />
+                      </div>
+                      <span className="font-heading text-sm text-foreground">Exploration</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                        <Sun className="w-8 h-8 text-primary" />
+                      </div>
+                      <span className="font-heading text-sm text-foreground">Atmosphere</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center">
+                        <BookOpen className="w-8 h-8 text-primary" />
+                      </div>
+                      <span className="font-heading text-sm text-foreground">Storytelling</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 

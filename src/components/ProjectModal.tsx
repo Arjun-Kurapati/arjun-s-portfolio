@@ -202,6 +202,26 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
               </div>
 
+              {/* Narrative Summary Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Narrative Summary
+                  </h3>
+                </div>
+                <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+                  <p>
+                    In <span className="text-primary font-semibold">The Light Remains</span>, the player explores a <span className="text-primary">broken world</span> shaped by a <span className="text-primary font-semibold">mysterious light</span> from the sky. <span className="text-primary">Floating islands</span> and <span className="text-primary">ruined paths</span> show that something went wrong long ago.
+                  </p>
+                  <p>
+                    The story is told through the <span className="text-primary font-semibold">environment</span> as the player moves forward. A <span className="text-primary">distant light</span> guides the journey and slowly reveals the past.
+                  </p>
+                  <p>
+                    At the end, the player learns that the light is not dangerous, but something that <span className="text-primary font-semibold">keeps the world alive</span>. The world is still broken, but it is <span className="text-primary">calm</span>.
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

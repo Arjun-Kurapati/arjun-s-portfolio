@@ -97,7 +97,7 @@ const ScreenshotGallery = ({
 
               {/* Image Counter */}
               <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-background/80 backdrop-blur-sm border border-border/50">
-                <span className="text-sm text-justify font-light font-serif text-zinc-600">
+                <span className="text-sm font-thin text-left font-sans text-primary-foreground bg-black/0">
                   {currentIndex + 1} / {images.length}
                 </span>
               </div>
@@ -111,7 +111,7 @@ const ScreenshotGallery = ({
         </div>
 
         {/* Thumbnail Strip */}
-        <div className="mt-4 flex gap-2 justify-center flex-wrap max-w-4xl">
+        <div className="mt-4 flex gap-2 justify-center flex-wrap max-w-4xl w-0 shadow-sm opacity-75 border">
           {images.map((image, index) => <button key={index} onClick={() => goToSlide(index)} className={`flex-shrink-0 w-16 h-10 md:w-20 md:h-12 rounded-md overflow-hidden border-2 transition-all duration-200 ${index === currentIndex ? "border-primary ring-2 ring-primary/30 opacity-100" : "border-border/40 opacity-50 hover:opacity-90"}`}>
               <img src={image} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
             </button>)}

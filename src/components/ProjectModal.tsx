@@ -14,6 +14,7 @@ interface Project {
   tools: string[];
   icon: React.ReactNode;
   image?: string;
+  videoGif?: string;
 }
 interface ProjectModalProps {
   project: Project | null;
@@ -168,6 +169,19 @@ const ProjectModal = ({
 
               {/* Screenshot Gallery */}
               <ScreenshotGallery images={projectScreenshots} />
+
+              {/* Video/GIF Section */}
+              {project.videoGif && (
+                <div className="mt-8">
+                  <div className="rounded-xl overflow-hidden border border-border/50 shadow-xl">
+                    <img 
+                      src={project.videoGif} 
+                      alt={`${project.title} gameplay`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+              )}
 
               {/* Game Design Section */}
               <div className="mt-12 mb-8">

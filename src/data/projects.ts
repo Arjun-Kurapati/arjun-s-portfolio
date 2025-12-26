@@ -14,6 +14,7 @@ export interface Project {
   modalImage?: string;
   genre?: string;
   videoGif?: string;
+  videoUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -30,6 +31,7 @@ export const projects: Project[] = [
     genre: "Third Person · Exploration Adventure",
     image: "/images/the-light-remains-thumb.jpg",
     modalImage: "/images/the-light-remains.jpg",
+    videoUrl: "/videos/the-light-remains-gameplay.mp4",
   },
   {
     id: 2,

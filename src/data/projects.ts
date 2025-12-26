@@ -13,6 +13,7 @@ export interface Project {
   image?: string;
   modalImage?: string;
   genre?: string;
+  videoGif?: string;
 }
 
 export const projects: Project[] = [

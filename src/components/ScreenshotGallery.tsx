@@ -72,8 +72,8 @@ const ScreenshotGallery = ({ images, title = "Overview Screenshots" }: Screensho
     <>
       <div className="mt-6 flex flex-col items-center w-full">
         {/* Section Header */}
-        <div className="bg-gradient-to-r from-primary/80 to-primary/40 rounded px-4 py-2 mb-5">
-          <h3 className="font-display text-base font-semibold text-primary-foreground">
+        <div className="w-full bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+          <h3 className="font-display text-lg font-semibold text-foreground text-center">
             {title}
           </h3>
         </div>

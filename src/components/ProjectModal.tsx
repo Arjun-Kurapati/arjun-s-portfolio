@@ -141,7 +141,7 @@ const ProjectModal = ({
               {/* Video Section - Before Overview */}
               {project.videoUrl && (
                 <div className="mb-8 flex justify-center">
-                  <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl max-w-2xl w-full">
+                  <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl max-w-3xl w-full">
                     <video 
                       ref={videoRef}
                       src={project.videoUrl}

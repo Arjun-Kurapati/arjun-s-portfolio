@@ -133,16 +133,7 @@ const ProjectModal = ({
                       Project Overview
                     </h3>
                   </div>
-                  <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
-                    <p>
-                      <span className="text-primary">The Light Remains</span> is a <span className="text-primary">solo</span> third-person action-adventure project made in <span className="text-primary">Unreal Engine 5</span>.
-                    </p>
-                    <p>The main focus of this project is level design, exploration, and environment storytelling. Player guidance is done using lighting, paths, and landmarks, without heavy UI.<span className="text-primary">level design</span>, <span className="text-primary">exploration</span>, and <span className="text-primary">environment storytelling</span>. Player guidance is done using lighting, paths, and landmarks, without heavy UI.
-                    </p>
-                    <p>
-                      The project was completed in <span className="text-primary">~30-minute playable experience</span> and results in a <span className="text-primary">~30-minute playable experience</span> set in floating islands and dangerous traversal areas.
-                    </p>
-                  </div>
+                  
                 </div>
 
                 {/* Focus Areas */}
@@ -153,15 +144,9 @@ const ProjectModal = ({
                     </h3>
                   </div>
                   <ul className="space-y-5 list-disc list-outside ml-5">
-                    <li className="font-body text-muted-foreground leading-relaxed">
-                      <span className="text-primary font-semibold">Level Design & Player Flow:</span> Designed the full level from start to finish, focusing on clear paths, vertical traversal, exploration routes, and a strong sense of progression toward the final goal.
-                    </li>
-                    <li className="font-body text-muted-foreground leading-relaxed">
-                      <span className="text-primary font-semibold">Environmental Storytelling & Guidance:</span> Told the story through the environment using lighting, landmarks, broken paths, and world composition—guiding the player naturally without maps or heavy UI.
-                    </li>
-                    <li className="font-body text-muted-foreground leading-relaxed">
-                      <span className="text-primary font-semibold">Blockout & Blueprint Implementation:</span> Built the level mainly using Unreal Engine's modeling tools, with a few custom props made in Maya. Implemented gameplay logic using Blueprints, including triggers, dialogue, sound, and object visibility tied to player progression.
-                    </li>
+                    
+                    
+                    
                   </ul>
                 </div>
               </div>

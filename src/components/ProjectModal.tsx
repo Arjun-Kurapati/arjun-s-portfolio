@@ -361,6 +361,69 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Level Beats & Walkthrough Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-8">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Level Beats & Walkthrough
+                  </h3>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Phases Column */}
+                  <div className="space-y-8">
+                    {/* Phase 1 */}
+                    <div>
+                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                        Phase 1: The Journey Begins
+                      </h4>
+                      <ul className="space-y-2 font-body text-muted-foreground">
+                        <li><span className="text-primary">1.</span> Player Start</li>
+                        <li><span className="text-primary">2.</span> First Environment</li>
+                        <li><span className="text-primary">3.</span> Early Exploration</li>
+                      </ul>
+                    </div>
+                    
+                    {/* Phase 2 */}
+                    <div>
+                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                        Phase 2: Following the Light
+                      </h4>
+                      <ul className="space-y-2 font-body text-muted-foreground">
+                        <li><span className="text-primary">4.</span> Guided Path</li>
+                        <li><span className="text-primary">5.</span> Exploration + Challenge</li>
+                        <li><span className="text-primary">6.</span> Key Landmark</li>
+                      </ul>
+                    </div>
+                    
+                    {/* Phase 3 */}
+                    <div>
+                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                        Phase 3: The Truth
+                      </h4>
+                      <ul className="space-y-2 font-body text-muted-foreground">
+                        <li><span className="text-primary">7.</span> Major Reveal</li>
+                        <li><span className="text-primary">8.</span> Enemy Fight</li>
+                        <li><span className="text-primary">9.</span> Final Path</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  {/* Images Grid */}
+                  <div className="lg:col-span-2 grid grid-cols-3 gap-3">
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                      <div key={num} className="relative rounded-lg overflow-hidden border border-border/30">
+                        <img 
+                          src={`/images/level-beat-0${num}.jpg`}
+                          alt={`Level Beat ${num}`}
+                          className="w-full h-auto object-cover aspect-video"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

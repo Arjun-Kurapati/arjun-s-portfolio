@@ -117,7 +117,7 @@ const ScreenshotGallery = ({
               <button 
                 key={index} 
                 onClick={() => goToSlide(index)} 
-                className={`flex-shrink-0 w-16 h-10 md:w-24 md:h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                className={`flex-shrink-0 w-28 h-16 md:w-36 md:h-24 rounded-md overflow-hidden border-2 transition-all duration-200 ${
                   index === currentIndex 
                     ? "border-primary ring-2 ring-primary/40 opacity-100 scale-105" 
                     : "border-border/40 opacity-60 hover:opacity-100 hover:border-primary/50"

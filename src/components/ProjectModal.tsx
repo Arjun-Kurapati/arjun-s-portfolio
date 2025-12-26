@@ -350,6 +350,15 @@ const ProjectModal = ({
                     Each section is carefully arranged to keep the player engaged, create moments of <span className="text-primary">danger</span> and <span className="text-primary">calm</span>, and support the story told through the environment.
                   </p>
                 </div>
+                
+                {/* Level Layout Map */}
+                <div className="mt-8 flex justify-center">
+                  <img 
+                    src="/images/level-layout-map.png" 
+                    alt="Level Layout Map" 
+                    className="w-full max-w-4xl h-auto object-contain"
+                  />
+                </div>
               </div>
 
               <div className="space-y-6">

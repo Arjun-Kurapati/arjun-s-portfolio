@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Maximize2, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, ZoomIn, ZoomOut, SkipBack } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 interface ScreenshotGalleryProps {
   images: string[];
@@ -152,7 +152,7 @@ const ScreenshotGallery = ({
 
               {/* Close Button */}
               <button onClick={closeLightbox} className="p-2 rounded-full bg-background/80 border border-border/50 text-foreground hover:bg-destructive/20 hover:border-destructive/50 transition-all duration-200" aria-label="Close lightbox">
-                <ZoomIn className="w-6 h-6" />
+                <SkipBack className="w-6 h-6" />
               </button>
             </div>
 

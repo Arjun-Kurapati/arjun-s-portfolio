@@ -305,13 +305,13 @@ const ProjectModal = ({
                 </div>
                 
                 {/* Image Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-2xl mx-auto">
                   <div className="flex flex-col items-center gap-3">
                     <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
                       <img 
                         src="/images/explorative-key.png" 
                         alt="Key Item" 
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
                       />
                     </div>
                     <span className="font-heading text-sm text-primary">Key Item</span>
@@ -321,7 +321,7 @@ const ProjectModal = ({
                       <img 
                         src="/images/explorative-lootbox.png" 
                         alt="Loot Box" 
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
                       />
                     </div>
                     <span className="font-heading text-sm text-primary">Loot Box</span>

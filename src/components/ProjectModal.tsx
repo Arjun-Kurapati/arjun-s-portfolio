@@ -26,7 +26,6 @@ const ProjectModal = ({
   onClose
 }: ProjectModalProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -36,7 +35,6 @@ const ProjectModal = ({
       }
     }
   };
-
   useEffect(() => {
     if (project) {
       document.body.style.overflow = "hidden";
@@ -139,22 +137,11 @@ const ProjectModal = ({
               <div className="gradient-line mb-8" />
 
               {/* Video Section - Before Overview */}
-              {project.videoUrl && (
-                <div className="mb-8 flex justify-center">
+              {project.videoUrl && <div className="mb-8 flex justify-center">
                   <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl max-w-4xl w-full">
-                    <video 
-                      ref={videoRef}
-                      src={project.videoUrl}
-                      className="w-full h-auto object-cover cursor-pointer"
-                      onClick={handleVideoClick}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
+                    <video ref={videoRef} src={project.videoUrl} className="w-full h-auto object-cover cursor-pointer" onClick={handleVideoClick} autoPlay loop muted playsInline />
                   </div>
-                </div>
-              )}
+                </div>}
 
               {/* Two Column Layout */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -202,17 +189,11 @@ const ProjectModal = ({
               <ScreenshotGallery images={projectScreenshots} />
 
               {/* Video/GIF Section */}
-              {project.videoGif && (
-                <div className="mt-8">
+              {project.videoGif && <div className="mt-8">
                   <div className="rounded-xl overflow-hidden border border-border/50 shadow-xl">
-                    <img 
-                      src={project.videoGif} 
-                      alt={`${project.title} gameplay`}
-                      className="w-full h-auto object-cover"
-                    />
+                    <img src={project.videoGif} alt={`${project.title} gameplay`} className="w-full h-auto object-cover" />
                   </div>
-                </div>
-              )}
+                </div>}
 
               {/* Game Design Section */}
               <div className="mt-12 mb-8">
@@ -272,10 +253,7 @@ const ProjectModal = ({
                     </div>
                   </div>
                   <div className="flex justify-center mt-8">
-                    <a 
-                      href="#" 
-                      className="px-6 py-3 font-heading text-sm text-foreground bg-primary/10 border border-primary/30 rounded-lg hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 flex items-center gap-2"
-                    >
+                    <a href="#" className="px-6 py-3 font-heading text-sm text-foreground bg-primary/10 border border-primary/30 rounded-lg hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 flex items-center gap-2">
                       Link to Game Design Document
                       <span className="text-primary">→</span>
                     </a>
@@ -308,21 +286,13 @@ const ProjectModal = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 max-w-2xl mx-auto">
                   <div className="flex flex-col items-center gap-3">
                     <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
-                      <img 
-                        src="/images/explorative-key.png" 
-                        alt="Key Item" 
-                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
-                      />
+                      <img src="/images/explorative-key.png" alt="Key Item" className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110" />
                     </div>
                     <span className="font-heading text-sm text-primary">Key Item</span>
                   </div>
                   <div className="flex flex-col items-center gap-3">
                     <div className="rounded-xl overflow-hidden border border-border/50 shadow-lg">
-                      <img 
-                        src="/images/explorative-lootbox.png" 
-                        alt="Loot Box" 
-                        className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
-                      />
+                      <img src="/images/explorative-lootbox.png" alt="Loot Box" className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110" />
                     </div>
                     <span className="font-heading text-sm text-primary">Loot Box</span>
                   </div>
@@ -346,18 +316,13 @@ const ProjectModal = ({
                   <p>
                     Exploration is encouraged through <span className="text-primary">optional routes</span>, <span className="text-primary">vertical spaces</span>, and <span className="text-primary">hidden areas</span> that reward curiosity. Instead of relying on complex mechanics, the level uses <span className="text-primary font-semibold">space</span>, <span className="text-primary font-semibold">lighting</span>, and <span className="text-primary font-semibold">pacing</span> to guide the experience.
                   </p>
-                  <p>
-                    Each section is carefully arranged to keep the player engaged, create moments of <span className="text-primary">danger</span> and <span className="text-primary">calm</span>, and support the story told through the environment.
+                  <p>Each section is carefully arranged to keep the player engaged, create moments of danger and calm, and support the story told through the environment.<span className="text-primary">danger</span> and <span className="text-primary">calm</span>, and support the story told through the environment.
                   </p>
                 </div>
                 
                 {/* Level Layout Map */}
                 <div className="mt-8 flex justify-center">
-                  <img 
-                    src="/images/level-layout-map.png" 
-                    alt="Level Layout Map" 
-                    className="w-full max-w-4xl h-auto object-contain"
-                  />
+                  <img src="/images/level-layout-map.png" alt="Level Layout Map" className="w-full max-w-4xl h-auto object-contain" />
                 </div>
               </div>
 
@@ -411,15 +376,9 @@ const ProjectModal = ({
                   
                   {/* Images Grid */}
                   <div className="lg:col-span-3 grid grid-cols-3 gap-2">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                      <div key={num} className="relative rounded-lg overflow-hidden border border-border/30">
-                        <img 
-                          src={`/images/level-beat-0${num}.jpg`}
-                          alt={`Level Beat ${num}`}
-                          className="w-full h-auto object-cover aspect-video"
-                        />
-                      </div>
-                    ))}
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => <div key={num} className="relative rounded-lg overflow-hidden border border-border/30">
+                        <img src={`/images/level-beat-0${num}.jpg`} alt={`Level Beat ${num}`} className="w-full h-auto aspect-video object-contain border-dotted border-0 shadow-none" />
+                      </div>)}
                   </div>
                 </div>
               </div>

@@ -67,11 +67,54 @@ const ScreenshotGallery = ({
         </div>
 
         {/* Main Image Display - Larger Size */}
-        
+        <div className="relative w-full max-w-4xl mx-auto flex items-center justify-center gap-4">
+          {/* Left Arrow */}
+          <button onClick={goToPrevious} className="flex-shrink-0 p-2.5 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-md" aria-label="Previous image">
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Image Container */}
+          <div className="relative w-full max-w-3xl">
+            <div className="relative aspect-video bg-background-secondary rounded-xl overflow-hidden border border-border/50 cursor-pointer group shadow-lg" onClick={openLightbox}>
+              <AnimatePresence mode="wait">
+                <motion.img key={currentIndex} src={images[currentIndex]} alt={`Screenshot ${currentIndex + 1}`} className="w-full h-full object-cover" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: 1
+              }} exit={{
+                opacity: 0
+              }} transition={{
+                duration: 0.2
+              }} />
+              </AnimatePresence>
+
+              {/* Fullscreen hint overlay */}
+              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-all duration-200 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/80 backdrop-blur-sm rounded-full p-3">
+                  <Maximize2 className="w-6 h-6 text-foreground" />
+                </div>
+              </div>
+
+              {/* Image Counter */}
+              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-background/80 backdrop-blur-sm border border-border/50">
+                <span className="text-sm font-thin text-left font-sans text-primary-foreground bg-black/0">
+                  {currentIndex + 1} / {images.length}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Arrow */}
+          <button onClick={goToNext} className="flex-shrink-0 p-2.5 rounded-full bg-background/90 border border-border/50 text-foreground hover:bg-primary/20 hover:border-primary/50 transition-all duration-200 shadow-md" aria-label="Next image">
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
 
         {/* Thumbnail Strip */}
         <div className="mt-4 flex gap-2 justify-center flex-wrap max-w-4xl w-0 shadow-sm opacity-75 border">
-          {images.map((image, index) => {})}
+          {images.map((image, index) => <button key={index} onClick={() => goToSlide(index)} className={`flex-shrink-0 w-16 h-10 md:w-20 md:h-12 rounded-md overflow-hidden border-2 transition-all duration-200 ${index === currentIndex ? "border-primary ring-2 ring-primary/30 opacity-100" : "border-border/40 opacity-50 hover:opacity-90"}`}>
+              <img src={image} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
+            </button>)}
         </div>
       </div>
 

@@ -111,13 +111,13 @@ const ScreenshotGallery = ({
         </div>
 
         {/* Horizontal Thumbnail Strip */}
-        <div className="mt-6 w-full max-w-4xl overflow-x-auto">
-          <div className="flex gap-3 justify-center pb-2">
+        <div className="mt-3 w-full max-w-4xl overflow-x-auto">
+          <div className="flex gap-2 justify-center pb-1">
             {images.map((image, index) => (
               <button 
                 key={index} 
                 onClick={() => goToSlide(index)} 
-                className={`flex-shrink-0 w-24 h-14 md:w-32 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                className={`flex-shrink-0 w-28 h-16 md:w-36 md:h-24 rounded-md overflow-hidden border-2 transition-all duration-200 ${
                   index === currentIndex 
                     ? "border-primary ring-2 ring-primary/40 opacity-100 scale-105" 
                     : "border-border/40 opacity-60 hover:opacity-100 hover:border-primary/50"

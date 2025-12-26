@@ -369,15 +369,15 @@ const ProjectModal = ({
                   </h3>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                   {/* Phases Column */}
-                  <div className="space-y-8">
+                  <div className="space-y-4">
                     {/* Phase 1 */}
                     <div>
-                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                      <h4 className="font-display text-sm font-semibold text-foreground mb-2">
                         Phase 1: The Journey Begins
                       </h4>
-                      <ul className="space-y-2 font-body text-muted-foreground">
+                      <ul className="space-y-1 font-body text-xs text-muted-foreground">
                         <li><span className="text-primary">1.</span> Player Start</li>
                         <li><span className="text-primary">2.</span> First Environment</li>
                         <li><span className="text-primary">3.</span> Early Exploration</li>
@@ -386,10 +386,10 @@ const ProjectModal = ({
                     
                     {/* Phase 2 */}
                     <div>
-                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                      <h4 className="font-display text-sm font-semibold text-foreground mb-2">
                         Phase 2: Following the Light
                       </h4>
-                      <ul className="space-y-2 font-body text-muted-foreground">
+                      <ul className="space-y-1 font-body text-xs text-muted-foreground">
                         <li><span className="text-primary">4.</span> Guided Path</li>
                         <li><span className="text-primary">5.</span> Exploration + Challenge</li>
                         <li><span className="text-primary">6.</span> Key Landmark</li>
@@ -398,10 +398,10 @@ const ProjectModal = ({
                     
                     {/* Phase 3 */}
                     <div>
-                      <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                      <h4 className="font-display text-sm font-semibold text-foreground mb-2">
                         Phase 3: The Truth
                       </h4>
-                      <ul className="space-y-2 font-body text-muted-foreground">
+                      <ul className="space-y-1 font-body text-xs text-muted-foreground">
                         <li><span className="text-primary">7.</span> Major Reveal</li>
                         <li><span className="text-primary">8.</span> Enemy Fight</li>
                         <li><span className="text-primary">9.</span> Final Path</li>
@@ -410,7 +410,7 @@ const ProjectModal = ({
                   </div>
                   
                   {/* Images Grid */}
-                  <div className="lg:col-span-2 grid grid-cols-3 gap-3">
+                  <div className="lg:col-span-3 grid grid-cols-3 gap-2">
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
                       <div key={num} className="relative rounded-lg overflow-hidden border border-border/30">
                         <img 

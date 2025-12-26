@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Play } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
+import { X } from "lucide-react";
+import { useEffect, useRef } from "react";
 import ScreenshotGallery from "./ScreenshotGallery";
 
 // Project screenshots in sequence
@@ -25,14 +25,16 @@ const ProjectModal = ({
   project,
   onClose
 }: ProjectModalProps) => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handlePlayVideo = () => {
-    setIsVideoPlaying(true);
-    setTimeout(() => {
-      videoRef.current?.play();
-    }, 100);
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
   };
 
   useEffect(() => {
@@ -140,34 +142,16 @@ const ProjectModal = ({
               {project.videoUrl && (
                 <div className="mb-8">
                   <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl">
-                    {!isVideoPlaying ? (
-                      <div 
-                        className="relative cursor-pointer group"
-                        onClick={handlePlayVideo}
-                      >
-                        <video 
-                          src={project.videoUrl}
-                          className="w-full h-auto object-cover"
-                          muted
-                          playsInline
-                          preload="metadata"
-                        />
-                        {/* Play button overlay */}
-                        <div className="absolute inset-0 bg-background/40 flex items-center justify-center transition-all duration-300 group-hover:bg-background/20">
-                          <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg shadow-primary/30 transition-transform duration-300 group-hover:scale-110">
-                            <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <video 
-                        ref={videoRef}
-                        src={project.videoUrl}
-                        className="w-full h-auto object-cover"
-                        controls
-                        playsInline
-                      />
-                    )}
+                    <video 
+                      ref={videoRef}
+                      src={project.videoUrl}
+                      className="w-full h-auto object-cover cursor-pointer"
+                      onClick={handleVideoClick}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
                   </div>
                 </div>
               )}

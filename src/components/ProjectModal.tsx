@@ -283,6 +283,28 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Explorative Items Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Explorative Items
+                  </h3>
+                </div>
+                <div className="space-y-5 font-body text-muted-foreground leading-relaxed">
+                  <p>
+                    Exploration is rewarded through simple <span className="text-primary">interactive items</span> placed along the player's journey. Instead of complex systems, I focused on <span className="text-primary font-semibold">discoverability</span> and <span className="text-primary font-semibold">curiosity</span>, encouraging players to explore optional paths and hidden areas.
+                  </p>
+                  <ul className="space-y-4 list-disc list-outside ml-5">
+                    <li>
+                      <span className="text-primary font-semibold">Loot Objects:</span> Small loot boxes are placed in side paths and hard-to-reach locations. These rewards give players a sense of <span className="text-primary">progress</span> and reinforce exploration without interrupting gameplay flow.
+                    </li>
+                    <li>
+                      <span className="text-primary font-semibold">Key Item:</span> A key is collected during the journey without explaining its purpose. The player only learns its importance at the <span className="text-primary">final door</span>, creating a <span className="text-primary font-semibold">delayed payoff</span> and a stronger narrative moment. This approach allows the player to discover meaning through gameplay, rather than direct explanation.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

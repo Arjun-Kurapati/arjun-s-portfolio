@@ -422,6 +422,38 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Planning & Development Breakdown Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Planning & Development Breakdown
+                  </h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
+                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 1 – Planning & Layout</h4>
+                    <p className="font-body text-muted-foreground leading-relaxed">
+                      Defined the core idea and theme, planned the player path, key locations, and player guidance using light and landmarks.
+                    </p>
+                  </div>
+                  
+                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
+                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 2 – Rough Blockout</h4>
+                    <p className="font-body text-muted-foreground leading-relaxed">
+                      Built the full level blockout in Unreal Engine, testing scale, pacing, traversal, and exploration flow.
+                    </p>
+                  </div>
+                  
+                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
+                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 3 – Refined Blockout & Polish</h4>
+                    <p className="font-body text-muted-foreground leading-relaxed">
+                      Improved level readability, added gameplay triggers (light, dialogue, progression), fixed flow issues, and polished the level into a complete playable experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

@@ -399,29 +399,6 @@ const ProjectModal = ({
                 </div>
               </div>
 
-              {/* Pre-Production & Development Approach Section */}
-              <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
-                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
-                    Pre-Production & Development Approach
-                  </h3>
-                </div>
-                
-                <p className="text-foreground/80 mb-8 leading-relaxed">
-                  For <span className="text-primary font-medium">The Light Remains</span>, I followed a simple and{' '}
-                  <span className="text-primary">iterative workflow</span> inspired by{' '}
-                  <span className="text-primary">real-world level design processes</span>.
-                  Before production, I focused on the core idea, player journey, and overall level flow, then refined the experience through quick iteration and playtesting.
-                  The project was completed in <span className="text-primary">3 weeks</span>, with each week focused on a clear goal.
-                </p>
-
-                <div className="flex justify-center">
-                  <div className="w-full max-w-4xl h-64 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm">Development approach image placeholder - upload your image</p>
-                  </div>
-                </div>
-              </div>
-
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

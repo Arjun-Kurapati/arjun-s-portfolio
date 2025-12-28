@@ -326,6 +326,22 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Pacing & Tension Graph Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Pacing & Tension Graph
+                  </h3>
+                </div>
+                <div className="flex justify-center">
+                  <img 
+                    src="/images/pacing-tension-graph.png" 
+                    alt="Pacing & Tension Graph" 
+                    className="w-full max-w-5xl h-auto object-contain" 
+                  />
+                </div>
+              </div>
+
               {/* Level Beats & Walkthrough Section */}
               <div className="mt-12 mb-8">
                 <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-8">

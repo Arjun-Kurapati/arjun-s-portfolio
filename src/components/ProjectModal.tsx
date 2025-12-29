@@ -72,7 +72,7 @@ const ProjectModal = ({
       }} />
 
           {/* Modal content - Fullscreen */}
-          <motion.div className="relative w-full h-full max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] overflow-y-auto bg-gradient-to-br from-card to-background-secondary rounded-2xl border border-border/50" initial={{
+          <motion.div className="relative w-screen h-screen overflow-y-auto bg-gradient-to-br from-card to-background-secondary" initial={{
         scale: 0.9,
         opacity: 0,
         y: 50

@@ -118,9 +118,21 @@ const ProjectModal = ({
               </div>
             </div>
 
-            {/* Content */}
-            <div className="p-6 md:p-10">
-              
+            {/* Content - Centered with max-width for readability */}
+            <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-10">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                  {project.icon}
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-1">
+                    {project.title}
+                  </h2>
+                  <p className="font-heading text-sm text-primary tracking-wider uppercase">
+                    {project.role}
+                  </p>
+                </div>
+              </div>
 
               <div className="gradient-line mb-8" />
 
@@ -132,9 +144,9 @@ const ProjectModal = ({
                 </div>}
 
               {/* Two Column Layout */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mb-8">
                 {/* Project Overview */}
-                <div>
+                <div className="max-w-prose">
                   <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Project Overview
@@ -153,7 +165,7 @@ const ProjectModal = ({
                 </div>
 
                 {/* Focus Areas */}
-                <div>
+                <div className="max-w-prose">
                   <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Focus Areas
@@ -201,9 +213,9 @@ const ProjectModal = ({
               </div>
 
               {/* Narrative Summary & Design Pillars - Two Column Layout */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mt-12 mb-8">
                 {/* Narrative Summary */}
-                <div>
+                <div className="max-w-prose">
                   <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Narrative Summary
@@ -220,7 +232,7 @@ const ProjectModal = ({
                 </div>
 
                 {/* Design Pillars */}
-                <div>
+                <div className="max-w-prose">
                   <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Design Pillars
@@ -379,7 +391,11 @@ const ProjectModal = ({
                   </h3>
                 </div>
                 <div className="flex justify-center">
-                  <img src="/images/pacing-tension-graph.png" alt="Pacing & Tension Graph" className="w-full max-w-5xl h-auto object-contain" />
+                  <img 
+                    src="/images/pacing-tension-graph.png" 
+                    alt="Pacing & Tension Graph" 
+                    className="w-full max-w-5xl h-auto object-contain" 
+                  />
                 </div>
               </div>
 
@@ -408,8 +424,8 @@ const ProjectModal = ({
                     </h4>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div className="space-y-3 font-body text-muted-foreground leading-relaxed">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+                    <div className="space-y-3 font-body text-muted-foreground leading-relaxed max-w-prose">
                       <p><span className="text-primary">Week 1:</span> Defined the core idea and theme, planned the player path, key locations, and player guidance using light and landmarks.</p>
                       <p><span className="text-primary">Week 2:</span> Built the full level blockout in Unreal Engine, testing scale, pacing, traversal, and exploration flow.</p>
                       <p><span className="text-primary">Week 3:</span> Improved level readability, added gameplay triggers (light, dialogue, progression), fixed flow issues, and polished the level into a complete playable experience.</p>

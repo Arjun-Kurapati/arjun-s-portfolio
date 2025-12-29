@@ -407,49 +407,35 @@ const ProjectModal = ({
                   </h3>
                 </div>
                 
-                <p className="text-foreground/80 mb-8 leading-relaxed">
-                  For <span className="text-primary font-medium">The Light Remains</span>, I followed a simple and{' '}
+                <p className="font-body text-muted-foreground leading-relaxed mb-10">
+                  For <span className="text-primary">The Light Remains</span>, I followed a simple and{' '}
                   <span className="text-primary">iterative workflow</span> inspired by{' '}
                   <span className="text-primary">real-world level design processes</span>.
                   Before production, I focused on the core idea, player journey, and overall level flow, then refined the experience through quick iteration and playtesting.
                   The project was completed in <span className="text-primary">3 weeks</span>, with each week focused on a clear goal.
                 </p>
 
-                <div className="flex justify-center">
-                  <div className="w-full max-w-4xl h-64 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm">Development approach image placeholder - upload your image</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Planning & Development Breakdown Section */}
-              <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
-                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
-                    Planning & Development Breakdown
-                  </h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
-                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 1 – Planning & Layout</h4>
-                    <p className="font-body text-muted-foreground leading-relaxed">
-                      Defined the core idea and theme, planned the player path, key locations, and player guidance using light and landmarks.
-                    </p>
+                {/* Planning & Development Approach - Two Column */}
+                <div className="mb-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-1 h-8 bg-primary rounded-full"></div>
+                    <h4 className="font-display text-base font-semibold text-foreground italic">
+                      Planning & Development Approach
+                    </h4>
                   </div>
                   
-                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
-                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 2 – Rough Blockout</h4>
-                    <p className="font-body text-muted-foreground leading-relaxed">
-                      Built the full level blockout in Unreal Engine, testing scale, pacing, traversal, and exploration flow.
-                    </p>
-                  </div>
-                  
-                  <div className="p-5 rounded-lg bg-muted/20 border border-border/50">
-                    <h4 className="font-heading text-base font-semibold text-primary mb-2">Week 3 – Refined Blockout & Polish</h4>
-                    <p className="font-body text-muted-foreground leading-relaxed">
-                      Improved level readability, added gameplay triggers (light, dialogue, progression), fixed flow issues, and polished the level into a complete playable experience.
-                    </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-3 font-body text-muted-foreground leading-relaxed">
+                      <p><span className="text-primary">Week 1:</span> Defined the core idea and theme, planned the player path, key locations, and player guidance using light and landmarks.</p>
+                      <p><span className="text-primary">Week 2:</span> Built the full level blockout in Unreal Engine, testing scale, pacing, traversal, and exploration flow.</p>
+                      <p><span className="text-primary">Week 3:</span> Improved level readability, added gameplay triggers (light, dialogue, progression), fixed flow issues, and polished the level into a complete playable experience.</p>
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <div className="w-full max-w-md h-48 bg-muted/30 rounded-lg border border-border/50 flex items-center justify-center">
+                        <p className="text-muted-foreground text-sm text-center px-4">Development workflow image placeholder - upload your image</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

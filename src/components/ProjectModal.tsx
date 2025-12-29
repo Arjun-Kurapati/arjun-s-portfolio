@@ -118,8 +118,8 @@ const ProjectModal = ({
               </div>
             </div>
 
-            {/* Content */}
-            <div className="p-6 md:p-10">
+            {/* Content - Centered with max-width for readability */}
+            <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 py-10">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                   {project.icon}

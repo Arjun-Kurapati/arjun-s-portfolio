@@ -94,7 +94,7 @@ const ProjectModal = ({
             </button>
 
             {/* Header area */}
-            <div className="relative h-48 md:h-80 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
+            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-scale-down" />
               
               {/* HUD elements */}
@@ -107,7 +107,7 @@ const ProjectModal = ({
             </div>
 
             {/* Content - Centered with max-width for readability */}
-            <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-10">
+            <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-4 pb-10">
 
               {/* Video Section - Before Overview */}
               {project.videoUrl && <div className="mb-8 flex justify-center">
@@ -120,7 +120,7 @@ const ProjectModal = ({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mb-8">
                 {/* Project Overview */}
                 <div className="max-w-prose">
-                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Project Overview
                     </h3>
@@ -139,7 +139,7 @@ const ProjectModal = ({
 
                 {/* Focus Areas */}
                 <div className="max-w-prose">
-                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Focus Areas
                     </h3>
@@ -170,7 +170,7 @@ const ProjectModal = ({
 
               {/* Game Design Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Game Design
                   </h3>
@@ -189,7 +189,7 @@ const ProjectModal = ({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mt-12 mb-8">
                 {/* Narrative Summary */}
                 <div className="max-w-prose">
-                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Narrative Summary
                     </h3>
@@ -206,7 +206,7 @@ const ProjectModal = ({
 
                 {/* Design Pillars */}
                 <div className="max-w-prose">
-                  <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                     <h3 className="font-display text-lg font-semibold text-foreground text-center">
                       Design Pillars
                     </h3>
@@ -236,7 +236,7 @@ const ProjectModal = ({
 
               {/* Explorative Items Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Explorative Items
                   </h3>
@@ -274,7 +274,7 @@ const ProjectModal = ({
 
               {/* Level Design Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Level Design
                   </h3>
@@ -301,7 +301,7 @@ const ProjectModal = ({
 
               {/* Level Beats & Walkthrough Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-8">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-8">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Level Beats & Walkthrough
                   </h3>
@@ -358,7 +358,7 @@ const ProjectModal = ({
 
               {/* Pacing & Tension Graph Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Pacing & Tension Graph
                   </h3>
@@ -370,7 +370,7 @@ const ProjectModal = ({
 
               {/* Pre-Production & Development Approach Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Pre-Production & Development Approach
                   </h3>
@@ -434,7 +434,7 @@ const ProjectModal = ({
 
               {/* Post-Mortem Section */}
               <div className="mt-12 mb-8">
-                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
                   <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Post-Mortem
                   </h3>
@@ -450,24 +450,11 @@ const ProjectModal = ({
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                    Tools & Technologies
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tools.map((tool, i) => <span key={i} className="px-4 py-2 font-body text-sm text-foreground bg-primary/10 border border-primary/30 rounded-lg">
-                        {tool}
-                      </span>)}
-                  </div>
-                </div>
-
-                <div className="pt-6">
-                  <div className="glass-card p-6 text-center">
-                    <p className="font-body text-muted-foreground text-sm">
-                      Full project documentation and walkthrough available upon request
-                    </p>
-                  </div>
+              <div className="pt-6">
+                <div className="glass-card p-6 text-center">
+                  <p className="font-body text-muted-foreground text-sm">
+                    Full project documentation and walkthrough available upon request
+                  </p>
                 </div>
               </div>
             </div>

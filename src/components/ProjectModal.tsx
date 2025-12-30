@@ -448,15 +448,13 @@ const ProjectModal = ({
                     </h4>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                     <div className="space-y-4 font-body text-muted-foreground leading-relaxed max-w-prose">
-                      <p>My level design process focuses on <span className="text-primary">clarity</span>, <span className="text-primary">iteration</span>, and <span className="text-primary">playtesting</span>.</p>
-                      <p>I begin by planning the idea and player journey, writing simple notes about the level flow, important locations, and how the player should move through the world. This helps define the overall structure before building the level.</p>
-                      <p>I then create a rough blockout of the entire level to test scale, spacing, and traversal. During this phase, I frequently playtest the level, adjust paths, and fix areas where the player may feel confused or stuck.</p>
-                      <p>Once the rough blockout feels good to play, I move into a <span className="text-primary">refined blockout phase</span>. Here, I improve shapes, add detail, integrate assets, and use lighting and landmarks to better communicate direction and mood — turning the blockout into a clear and readable gameplay experience.</p>
+                      <p>My level design process focuses on <span className="text-primary">clarity</span>, <span className="text-primary">iteration</span>, and <span className="text-primary">playtesting</span>. I begin by planning the core idea and player journey, outlining the level flow, key locations, and how the player should move through the space before building anything.</p>
+                      <p>I then create a rough blockout to test scale, traversal, and pacing, constantly playtesting and refining the layout. Once the level feels good to play, I move into a <span className="text-primary">refined blockout phase</span>—improving shapes, adding detail, and using lighting and landmarks to guide the player and set the overall mood.</p>
                     </div>
                     
-                    <div className="flex justify-center">
+                    <div className="flex justify-center items-center">
                       <div className="w-full max-w-md overflow-hidden rounded-lg border border-border/50">
                         <video 
                           src="/videos/blockout-walkthrough.mp4" 

@@ -60,7 +60,7 @@ const ScreenshotGallery = ({
   return <>
       <div className="mt-6 flex flex-col items-center w-full">
         {/* Section Header */}
-        <div className="w-full bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+        <div className="w-full bg-primary/60 rounded-md px-4 py-3 mb-6">
           <h3 className="font-display text-lg font-semibold text-foreground text-center">
             {title}
           </h3>

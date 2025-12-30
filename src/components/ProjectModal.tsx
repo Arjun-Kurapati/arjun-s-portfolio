@@ -95,19 +95,7 @@ const ProjectModal = ({
 
             {/* Header area */}
             <div className="relative h-48 md:h-80 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
-              {project.image ? <img src={project.image} alt={project.title} className="w-full h-full object-cover" /> : <>
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsla(187,100%,50%,0.1),transparent_70%)]" />
-                  <motion.div className="text-8xl md:text-9xl opacity-20" animate={{
-              scale: [1, 1.05, 1],
-              rotate: [0, 2, -2, 0]
-            }} transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}>
-                    {project.icon}
-                  </motion.div>
-                </>}
+              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -120,21 +108,6 @@ const ProjectModal = ({
 
             {/* Content - Centered with max-width for readability */}
             <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-10">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                  {project.icon}
-                </div>
-                <div>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-1">
-                    {project.title}
-                  </h2>
-                  <p className="font-heading text-sm text-primary tracking-wider uppercase">
-                    {project.role}
-                  </p>
-                </div>
-              </div>
-
-              <div className="gradient-line mb-8" />
 
               {/* Video Section - Before Overview */}
               {project.videoUrl && <div className="mb-8 flex justify-center">

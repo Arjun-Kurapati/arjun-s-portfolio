@@ -95,7 +95,7 @@ const ProjectModal = ({
 
             {/* Header area */}
             <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0">
-              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-scale-down" />
+              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}
               <div className="absolute top-4 left-4 flex items-center gap-2">

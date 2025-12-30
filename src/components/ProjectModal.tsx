@@ -438,6 +438,38 @@ const ProjectModal = ({
                     </div>
                   </div>
                 </div>
+
+                {/* Production & Process - Two Column */}
+                <div className="mb-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-1 h-8 bg-primary rounded-full"></div>
+                    <h4 className="font-display text-base font-semibold text-foreground italic">
+                      Production & Process
+                    </h4>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+                    <div className="space-y-4 font-body text-muted-foreground leading-relaxed max-w-prose">
+                      <p>My level design process focuses on <span className="text-primary">clarity</span>, <span className="text-primary">iteration</span>, and <span className="text-primary">playtesting</span>.</p>
+                      <p>I begin by planning the idea and player journey, writing simple notes about the level flow, important locations, and how the player should move through the world. This helps define the overall structure before building the level.</p>
+                      <p>I then create a rough blockout of the entire level to test scale, spacing, and traversal. During this phase, I frequently playtest the level, adjust paths, and fix areas where the player may feel confused or stuck.</p>
+                      <p>Once the rough blockout feels good to play, I move into a <span className="text-primary">refined blockout phase</span>. Here, I improve shapes, add detail, integrate assets, and use lighting and landmarks to better communicate direction and mood — turning the blockout into a clear and readable gameplay experience.</p>
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <div className="w-full max-w-md overflow-hidden rounded-lg border border-border/50">
+                        <video 
+                          src="/videos/blockout-walkthrough.mp4" 
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-6">

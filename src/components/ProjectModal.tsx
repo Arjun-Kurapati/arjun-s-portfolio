@@ -471,15 +471,14 @@ const ProjectModal = ({
               </div>
 
               {/* Post-Mortem Section */}
-              <div className="mb-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-primary rounded-full"></div>
-                  <h4 className="font-display text-base font-semibold text-foreground italic">
+              <div className="mt-12 mb-8">
+                <div className="bg-gradient-to-r from-background via-primary/60 to-background rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
                     Post-Mortem
-                  </h4>
+                  </h3>
                 </div>
                 
-                <div className="space-y-4 font-body text-muted-foreground leading-relaxed max-w-prose">
+                <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
                   <p>
                     If I had more time, I would focus more on <span className="text-primary">playtesting</span>, especially near the final section of the level. I would also spend extra time refining the ending to improve pacing and make the final moments feel more impactful and clear for the player.
                   </p>

@@ -94,7 +94,7 @@ const ProjectModal = ({
             </button>
 
             {/* Header area */}
-            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden">
+            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-scale-down" />
               
               {/* HUD elements */}
@@ -447,6 +447,24 @@ const ProjectModal = ({
                   <p>
                     Overall, working on <span className="text-primary">The Light Remains</span> was a valuable learning experience. From planning the player journey to building and refining the level through blockouts, I learned how important iteration and playtesting are in level design. Completing this project helped me better balance creativity with technical work, manage time effectively, and confidently finish a complete playable experience. Seeing the level come together step by step was very rewarding and strengthened my confidence as a level designer.
                   </p>
+                </div>
+              </div>
+
+              {/* Credits Section */}
+              <div className="mt-12 mb-8">
+                <div className="bg-primary/60 rounded-md px-4 py-3 mb-6">
+                  <h3 className="font-display text-lg font-semibold text-foreground text-center">
+                    Credits
+                  </h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-body text-muted-foreground">
+                  <p><span className="text-primary font-semibold">Spirit Mask Asset</span> by Dmitry Schnein</p>
+                  <p><span className="text-primary font-semibold">Boat Asset</span> by Dmitry Schnein</p>
+                  <p><span className="text-primary font-semibold">Human Skull Asset</span> by Johan Hansson</p>
+                  <p><span className="text-primary font-semibold">Beer Skull Asset</span> by Johan Hansson</p>
+                  <p><span className="text-primary font-semibold">Totem Asset</span> by Stewart MacLean</p>
+                  <p><span className="text-primary font-semibold">Sword Asset</span> by MMKH</p>
                 </div>
               </div>
 

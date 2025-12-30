@@ -470,6 +470,26 @@ const ProjectModal = ({
                 </div>
               </div>
 
+              {/* Post-Mortem Section */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 justify-center">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/30" />
+                  <h4 className="font-display text-xl font-semibold text-foreground tracking-wide">
+                    Post-Mortem
+                  </h4>
+                  <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/30" />
+                </div>
+                
+                <div className="max-w-prose mx-auto space-y-4 font-body text-muted-foreground leading-relaxed text-left">
+                  <p>
+                    If I had more time, I would focus more on <span className="text-primary">playtesting</span>, especially near the final section of the level. I would also spend extra time refining the ending to improve pacing and make the final moments feel more impactful and clear for the player.
+                  </p>
+                  <p>
+                    Overall, working on <span className="text-primary">The Light Remains</span> was a valuable learning experience. From planning the player journey to building and refining the level through blockouts, I learned how important iteration and playtesting are in level design. Completing this project helped me better balance creativity with technical work, manage time effectively, and confidently finish a complete playable experience. Seeing the level come together step by step was very rewarding and strengthened my confidence as a level designer.
+                  </p>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

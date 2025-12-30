@@ -95,7 +95,7 @@ const ProjectModal = ({
 
             {/* Header area */}
             <div className="relative h-48 md:h-80 bg-gradient-to-b from-primary/10 to-transparent flex items-center justify-center overflow-hidden">
-              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
+              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-scale-down" />
               
               {/* HUD elements */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -364,11 +364,7 @@ const ProjectModal = ({
                   </h3>
                 </div>
                 <div className="flex justify-center">
-                  <img 
-                    src="/images/pacing-tension-graph.png" 
-                    alt="Pacing & Tension Graph" 
-                    className="w-full max-w-5xl h-auto object-contain" 
-                  />
+                  <img src="/images/pacing-tension-graph.png" alt="Pacing & Tension Graph" className="w-full max-w-5xl h-auto object-contain" />
                 </div>
               </div>
 
@@ -429,14 +425,7 @@ const ProjectModal = ({
                     
                     <div className="flex justify-center items-center">
                       <div className="w-full max-w-md overflow-hidden rounded-lg border border-border/50">
-                        <video 
-                          src="/videos/blockout-walkthrough.mp4" 
-                          autoPlay 
-                          loop 
-                          muted 
-                          playsInline
-                          className="w-full h-auto object-cover"
-                        />
+                        <video src="/videos/blockout-walkthrough.mp4" autoPlay loop muted playsInline className="w-full h-auto object-cover" />
                       </div>
                     </div>
                   </div>

@@ -95,7 +95,7 @@ const ProjectModal = ({
 
             {/* Header area */}
             <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0">
-              <img alt={project.title} src="/lovable-uploads/3b67913c-fe44-4048-b9de-4d7692fa2ce2.jpg" className="w-full h-full object-fill" />
+              <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}
               <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -469,7 +469,11 @@ const ProjectModal = ({
               </div>
 
               <div className="pt-6">
-                
+                <div className="glass-card p-6 text-center">
+                  <p className="font-body text-muted-foreground text-sm">
+                    Full project documentation and walkthrough available upon request
+                  </p>
+                </div>
               </div>
             </div>
 

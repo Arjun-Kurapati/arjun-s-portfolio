@@ -1,20 +1,50 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const dimensionsRef = useRef({ width: 1, height: 1 });
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    // Cache dimensions on mount and resize
+    const updateDimensions = () => {
+      dimensionsRef.current = {
+        width: window.innerWidth || 1,
+        height: window.innerHeight || 1,
+      };
+    };
+    
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      // Cancel any pending animation frame to avoid layout thrashing
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      
+      rafRef.current = requestAnimationFrame(() => {
+        const { width, height } = dimensionsRef.current;
+        setMousePosition({
+          x: (e.clientX / width - 0.5) * 20,
+          y: (e.clientY / height - 0.5) * 20,
+        });
       });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, []);
 
   return (

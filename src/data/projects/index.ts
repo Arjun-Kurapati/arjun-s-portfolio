@@ -7,6 +7,7 @@ import { theLightRemainsGroup } from "./the-light-remains-group";
 import { forgottenValley } from "./forgotten-valley";
 import { metroDescent } from "./metro-descent";
 import { layerZero } from "./layer-zero";
+import { echoesOfStella } from "./echoes-of-stella";
 
 // Export all projects
 export const projects: Project[] = [
@@ -15,6 +16,7 @@ export const projects: Project[] = [
   forgottenValley,
   metroDescent,
   layerZero,
+  echoesOfStella,
 ];
 
 // Helper functions

@@ -63,7 +63,7 @@ const ProjectNavigation = ({
       }, 100);
     }
   };
-  const handleProjectClick = (projectId: number) => {
+  const handleProjectClick = (projectId: string) => {
     setActiveDropdown(null);
     setIsOpen(false);
     onClose();

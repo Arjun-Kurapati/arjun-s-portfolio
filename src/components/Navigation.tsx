@@ -52,7 +52,7 @@ const Navigation = () => {
     }
   };
 
-  const handleProjectClick = (projectId: number) => {
+  const handleProjectClick = (projectId: string) => {
     setActiveDropdown(null);
     // Dispatch custom event to open project modal
     window.dispatchEvent(new CustomEvent('openProject', { detail: { projectId } }));

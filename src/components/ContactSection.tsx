@@ -14,13 +14,13 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-32 px-6" ref={ref}>
+    <section className="relative py-32 px-6 md:px-10 lg:px-16 xl:px-24" ref={ref}>
       {/* Background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[400px] bg-primary/10 blur-[150px] rounded-full" />
       </div>
 
-      <div className="max-w-3xl mx-auto relative text-center">
+      <div className="max-w-6xl mx-auto relative text-center">
         {/* Section content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

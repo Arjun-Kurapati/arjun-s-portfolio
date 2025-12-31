@@ -98,11 +98,11 @@ const ProjectModal = ({
             </button>
 
             {/* Header area - compact hero */}
-            <div className="relative h-32 md:h-48 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
+            <div className="relative h-24 md:h-36 bg-primary/10 flex items-center justify-center overflow-hidden mt-12">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}
-              <div className="absolute top-4 left-4 flex items-center gap-2">
+              <div className="absolute top-3 left-4 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="font-heading text-xs tracking-wider text-primary uppercase">
                   Project Data

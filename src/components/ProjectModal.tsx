@@ -98,7 +98,7 @@ const ProjectModal = ({
             </button>
 
             {/* Header area - with top padding for fixed nav */}
-            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
+            <div className="relative h-40 md:h-64 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}

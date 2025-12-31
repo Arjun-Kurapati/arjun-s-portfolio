@@ -473,11 +473,7 @@ const ProjectModal = ({
               </div>
 
               <div className="pt-6">
-                <div className="glass-card p-6 text-center">
-                  <p className="font-body text-muted-foreground text-sm">
-                    Full project documentation and walkthrough available upon request
-                  </p>
-                </div>
+                
               </div>
             </div>
 

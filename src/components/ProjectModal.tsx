@@ -110,8 +110,8 @@ const ProjectModal = ({
               </div>
             </div>
 
-            {/* Content - Full width layout */}
-            <div className="w-full px-6 md:px-10 lg:px-16 xl:px-20 pt-4 pb-10">
+            {/* Content - Full width edge-to-edge layout */}
+            <div className="w-full pt-4 pb-10">
 
               {/* Video Section - Before Overview */}
               {project.videoUrl && <div className="mb-8 flex justify-center">

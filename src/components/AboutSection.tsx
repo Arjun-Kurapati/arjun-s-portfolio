@@ -14,8 +14,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="relative py-32 px-6" ref={ref}>
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-32 px-6 md:px-10 lg:px-16 xl:px-24" ref={ref}>
+      <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
           className="mb-16"

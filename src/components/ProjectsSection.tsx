@@ -26,14 +26,14 @@ const ProjectSection = ({ category, title, id }: ProjectSectionProps) => {
   const categoryProjects = getProjectsByCategory(category);
 
   return (
-    <section className="relative py-32 px-6 md:px-10 lg:px-16 xl:px-24" id={id} ref={ref}>
+    <section className="relative py-32 px-6" id={id} ref={ref}>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/4 -right-20 w-60 h-60 bg-primary/3 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative">
         {/* Section header */}
         <motion.div
           className="mb-16 text-center"

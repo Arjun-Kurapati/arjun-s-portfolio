@@ -37,8 +37,8 @@ const ExperienceSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-32 px-6 md:px-10 lg:px-16 xl:px-24" ref={ref}>
-      <div className="max-w-6xl mx-auto relative">
+    <section className="relative py-32 px-6" ref={ref}>
+      <div className="max-w-4xl mx-auto relative">
         {/* Section header */}
         <motion.div
           className="mb-20"

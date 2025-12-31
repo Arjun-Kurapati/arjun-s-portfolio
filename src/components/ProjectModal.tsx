@@ -97,8 +97,8 @@ const ProjectModal = ({
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header area - with top padding for fixed nav */}
-            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
+            {/* Header area - compact hero */}
+            <div className="relative h-32 md:h-48 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}
@@ -110,8 +110,8 @@ const ProjectModal = ({
               </div>
             </div>
 
-            {/* Content - Centered with max-width for readability */}
-            <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-4 pb-10">
+            {/* Content - Full width edge-to-edge layout */}
+            <div className="w-full pt-4 pb-10">
 
               {/* Video Section - Before Overview */}
               {project.videoUrl && <div className="mb-8 flex justify-center">

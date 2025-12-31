@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Compass, BookOpen } from "lucide-react";
 import { useEffect, useRef } from "react";
 import ScreenshotGallery from "./ScreenshotGallery";
+import ProjectNavigation from "./ProjectNavigation";
 
 // Project screenshots in sequence
 const projectScreenshots = ["/images/screenshot-01.png", "/images/screenshot-02.jpg", "/images/screenshot-03.jpg", "/images/screenshot-04.jpg", "/images/screenshot-05.jpg", "/images/screenshot-06.jpg", "/images/screenshot-07.jpg", "/images/screenshot-08.jpg", "/images/screenshot-09.jpg", "/images/screenshot-10.jpg"];
@@ -88,13 +89,16 @@ const ProjectModal = ({
         duration: 0.4,
         ease: [0.4, 0, 0.2, 1]
       }}>
+            {/* Project Navigation */}
+            <ProjectNavigation onClose={onClose} />
+
             {/* Close button */}
-            <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 rounded-lg bg-background/50 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300">
+            <button onClick={onClose} className="absolute top-16 right-4 z-10 p-2 rounded-lg bg-background/50 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-300">
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header area */}
-            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0">
+            {/* Header area - with top padding for fixed nav */}
+            <div className="relative h-48 md:h-80 bg-primary/10 flex items-center justify-center overflow-hidden p-0 mt-12">
               <img src="/images/the-light-remains-cover.jpg" alt={project.title} className="w-full h-full object-cover" />
               
               {/* HUD elements */}

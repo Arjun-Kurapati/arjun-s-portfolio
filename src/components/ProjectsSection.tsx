@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Gamepad2, Map, Mountain, Compass, Building, Layers } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
-import { projects, getProjectsByCategory, getIconComponent, Project } from "@/data/projects";
+import { projects, getProjectsByCategory, Project } from "@/data/projects";
 
 const iconComponents: Record<string, React.ReactNode> = {
   Gamepad2: <Gamepad2 className="w-8 h-8 text-primary" />,
@@ -27,14 +27,12 @@ const ProjectSection = ({ category, title, id }: ProjectSectionProps) => {
 
   return (
     <section className="relative py-32 px-6" id={id} ref={ref}>
-      {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-40 h-40 bg-primary/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/4 -right-20 w-60 h-60 bg-primary/3 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Section header */}
         <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -60,20 +58,19 @@ const ProjectSection = ({ category, title, id }: ProjectSectionProps) => {
           </p>
         </motion.div>
 
-        {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {categoryProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               description={project.description}
-              role={project.role}
-              tools={project.tools}
+              role=""
+              tools={[]}
               icon={iconComponents[project.icon]}
               index={index}
-              image={project.image}
+              image={project.thumbnailImage}
               genre={project.genre}
-              hasImage={category === "personal" && !!project.image}
+              hasImage={category === "personal" && !!project.thumbnailImage}
               onClick={() => window.dispatchEvent(new CustomEvent('openProject', { detail: { projectId: project.id } }))}
             />
           ))}
@@ -87,7 +84,7 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    const handleOpenProject = (event: CustomEvent<{ projectId: number }>) => {
+    const handleOpenProject = (event: CustomEvent<{ projectId: string }>) => {
       const project = projects.find(p => p.id === event.detail.projectId);
       if (project) {
         setSelectedProject(project);
@@ -103,13 +100,8 @@ const ProjectsSection = () => {
       <ProjectSection category="personal" title="Personal Projects" id="personal-projects" />
       <ProjectSection category="group" title="Group Projects" id="group-projects" />
 
-      {/* Project modal */}
       <ProjectModal
-        project={selectedProject ? {
-          ...selectedProject,
-          icon: iconComponents[selectedProject.icon],
-          image: selectedProject.modalImage || selectedProject.image
-        } : null}
+        project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
     </>

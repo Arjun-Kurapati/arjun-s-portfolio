@@ -14,8 +14,47 @@ const PostMortemSection = ({ section }: PostMortemSectionProps) => {
         </h3>
       </div>
       
-      <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-        {section.paragraphs.map((p, index) => (
+      <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
+        {/* Insights section */}
+        {section.insights && (
+          <div>
+            <h4 className="font-display text-base font-semibold text-foreground mb-2">Insights</h4>
+            <p>
+              <HighlightedText text={section.insights.text} highlights={section.insights.highlights} />
+            </p>
+          </div>
+        )}
+        
+        {/* What Went Well section */}
+        {section.whatWentWell && section.whatWentWell.length > 0 && (
+          <div>
+            <h4 className="font-display text-base font-semibold text-foreground mb-2">What Went Well</h4>
+            <ul className="list-disc list-inside space-y-1">
+              {section.whatWentWell.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        {/* What I Learned section */}
+        {section.whatILearned && (
+          <div>
+            <h4 className="font-display text-base font-semibold text-foreground mb-2">What I Learned</h4>
+            <p className="mb-2">{section.whatILearned.intro}</p>
+            <ul className="list-disc list-inside space-y-1 mb-2">
+              {section.whatILearned.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+            {section.whatILearned.conclusion && (
+              <p>{section.whatILearned.conclusion}</p>
+            )}
+          </div>
+        )}
+        
+        {/* Original paragraphs (for backward compatibility) */}
+        {section.paragraphs && section.paragraphs.map((p, index) => (
           <p key={index}>
             <HighlightedText text={p.text} highlights={p.highlights} />
           </p>

@@ -43,6 +43,7 @@ export interface FocusAreasSection {
 
 export interface ScreenshotGallerySection {
   type: "screenshotGallery";
+  title?: string;
   images: string[];
 }
 
@@ -84,7 +85,7 @@ export interface ImageGridSection {
     alt: string;
     caption?: string;
   }>;
-  columns?: 2 | 3 | 4;
+  columns?: 1 | 2 | 3 | 4;
 }
 
 export interface LevelLayoutSection {
@@ -140,7 +141,17 @@ export interface DevelopmentSection {
 export interface PostMortemSection {
   type: "postMortem";
   title?: string;
-  paragraphs: Array<{
+  insights?: {
+    text: string;
+    highlights?: string[];
+  };
+  whatWentWell?: string[];
+  whatILearned?: {
+    intro: string;
+    points: string[];
+    conclusion?: string;
+  };
+  paragraphs?: Array<{
     text: string;
     highlights?: string[];
   }>;
